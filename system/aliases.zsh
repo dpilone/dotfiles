@@ -11,6 +11,6 @@ fi
 
 alias grep="grep --color=auto"
 alias pgrep='ps aux | grep -v grep | grep'
-alias ls="ls -GF"
+alias ls="ls -GF --color"
 alias ss="open -a 'screen sharing'"
 alias ge='mvim --remote-silent'
