@@ -22,7 +22,7 @@ fi
 # =======================================================
 # Linux specific aliases / fixes.
 # =======================================================
-if [ "$(uname -s)" == "Linux" ]
+if [[ "$(uname -s)" == "Linux" ]]
 then
   alias ls="ls -GF --color"
 fi 
