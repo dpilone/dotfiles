@@ -1,37 +1,27 @@
-# Sample gitconfig
-#
-
-[hub]
-        protocol = https
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
-        helper = osxkeychain
-[alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
+	name = User Name
+	email = email@address.com
+
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  # Turn on color console output
+	ui = always
+
 [core]
+        # Sets arguments used when git calls less.  I add tab stops at convenient places for log messages.
+        pager = less -FXRS -x17,26
         excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[help]
-        autocorrect = 1
-[push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to surpress warning message
-        default = simple
+
+[alias]
+        # Alias "git svn-diff" to list the commits on this branch that haven't been pushed to subversion
+        server-outgoing = log remotes/origin/master..
+        server-incoming = log ..remotes/origin/master
+
+[format]
+        # Format for log messages used by "git log".  Puts everything on one line with nicely aligned columns.
+        # Fields: Time, User name, Hash, Commit subject, Ref names (if available)
+        # See: http://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
+        # For colors, see color.branch option: http://www.kernel.org/pub/software/scm/git/docs/git-config.html#_variables
+        pretty = %Creset%Cblue%cr\t%C(cyan bold)%an%Creset\t%C(yellow)%h%Creset %s%C(magenta)%d%Creset
+
+[credential]
+	helper = osxkeychain

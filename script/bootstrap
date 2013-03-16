@@ -117,6 +117,7 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
+
 # If we are on a mac, lets install and setup homebrew
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -128,6 +129,12 @@ then
     fail "error installing dependencies"
   fi
 fi
+
+echo ''
+echo "If this is the first run you should load load any submodules"
+echo "git submodule init"
+echo "git submodule update"
+echo "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 echo ''
 echo '  All installed!'

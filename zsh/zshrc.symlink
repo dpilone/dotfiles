@@ -1,40 +1,100 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
-
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
-
-# use .localrc for SUPER SECRET CRAP that you don't
+# =======================================================
+# Use .localrc for SUPER SECRET STUFF that you don't
 # want in your public, versioned repo.
+# =======================================================
 if [[ -a ~/.localrc ]]
 then
-  source ~/.localrc
+ source ~/.localrc
 fi
 
-# all of our zsh files
+# =======================================================
+# Load all of our .zsh files from our .dotfile topics.
+# =======================================================
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+setopt extendedglob
+config_files=($HOME/.dotfiles/**^oh-my-zsh/*.zsh)
 
-# load the path files
+# -------------------------------------------------------
+# Load the path files
+# -------------------------------------------------------
 for file in ${(M)config_files:#*/path.zsh}
 do
   source $file
 done
 
-# load everything but the path and completion files
+# -------------------------------------------------------
+# Load everything but the path and completion files
+# NOTE: I removed support for the completion files in 
+# favor of oh-my-zsh completion support.
+# -------------------------------------------------------
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
 unset config_files
+
+# =======================================================
+# Path to your oh-my-zsh configuration.
+# =======================================================
+ZSH=$HOME/.dotfiles/oh-my-zsh
+
+# =======================================================
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# =======================================================
+ZSH_THEME="fino-time-shortpath"
+
+# =======================================================
+# Set to this to use case-sensitive completion
+# =======================================================
+# CASE_SENSITIVE="true"
+
+# =======================================================
+# Comment this out to disable bi-weekly auto-update checks
+# =======================================================
+DISABLE_AUTO_UPDATE="true"
+
+# =======================================================
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# =======================================================
+# export UPDATE_ZSH_DAYS=13
+
+# =======================================================
+# Uncomment following line if you want to disable colors in ls
+# (We enable this in a system alias for ls.)
+# =======================================================
+DISABLE_LS_COLORS="true"
+
+# =======================================================
+# Uncomment following line if you want to disable autosetting terminal title.
+# =======================================================
+# DISABLE_AUTO_TITLE="true"
+
+# =======================================================
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# =======================================================
+COMPLETION_WAITING_DOTS="true"
+
+# =======================================================
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# =======================================================
+plugins=(git osx rvm zsh-syntax-highlighting vagrant coffee urltools)
+
+source $ZSH/oh-my-zsh.sh
+
+# =======================================================
+# Customize to your needs...
+# =======================================================
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# =======================================================
+# To have paths colored instead of underlined
+# =======================================================
+ZSH_HIGHLIGHT_STYLES[path]='fg=white'
+
