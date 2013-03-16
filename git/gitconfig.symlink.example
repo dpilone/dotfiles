@@ -1,6 +1,6 @@
 [user]
-	name = User Name
-	email = email@address.com
+	name = AUTHORNAME
+	email = AUTHOREMAIL
 
 [color]
   # Turn on color console output
