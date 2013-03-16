@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc 
+brew install grc coreutils
 
 exit 0

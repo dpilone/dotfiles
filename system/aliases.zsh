@@ -1,6 +1,16 @@
-# grc overides for ls
-#   Made possible through contributions from generous benefactors like
-#   `brew install coreutils`
+# =======================================================
+# Basic aliases - should be cross platform or override below.
+# =======================================================
+alias grep="grep --color=auto"
+alias pgrep='ps aux | grep -v grep | grep'
+alias ss="open -a 'screen sharing'"
+alias ge='mvim --remote-silent'
+alias ls='ls -GF'
+
+# =======================================================
+# Override the basic aliases if we have GNU coreutils available
+#   `brew install coreutils` to get these...
+# =======================================================
 if $(gls &>/dev/null)
 then
   alias ls="gls -F --color"
@@ -9,8 +19,10 @@ then
   alias la='gls -A --color'
 fi
 
-alias grep="grep --color=auto"
-alias pgrep='ps aux | grep -v grep | grep'
-alias ls="ls -GF --color"
-alias ss="open -a 'screen sharing'"
-alias ge='mvim --remote-silent'
+# =======================================================
+# Linux specific aliases / fixes.
+# =======================================================
+if [ "$(uname -s)" == "Linux" ]
+then
+  alias ls="ls -GF --color"
+fi 
