@@ -138,5 +138,13 @@ else
   fail "error updating submodules"
 fi
 
+info "updating vim bundles"
+if vim +BundleInstall +qall > /tmp/vundle-update 2>&1
+then
+  success "vim bundles updated."
+else
+  fail "error updating vim bundles"
+fi
+
 echo ''
 echo '  All installed!'
