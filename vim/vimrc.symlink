@@ -105,7 +105,11 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 " Comment / uncomment
 Bundle 'tpope/vim-commentary'
+" Railscast theme, make sure you set your theme after this line if you use this 
 Bundle 'jpo/vim-railscasts-theme'
+" Git support in vim
+Bundle 'tpope/vim-fugitive'
+
 
 " original repos on github
 " Bundle 'tpope/vim-fugitive'
