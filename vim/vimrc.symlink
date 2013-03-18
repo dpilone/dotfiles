@@ -1,7 +1,7 @@
 syntax on
-set nocompatible               " be iMproved
-filetype off                   " required!
-colorscheme torte
+set nocompatible                    " be iMproved
+filetype off                        " required!
+"colorscheme railscasts             "Specified later because we load color schemes in Bundles
 
 " General Preferences
 set incsearch		            "search as you type
@@ -107,6 +107,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 " Railscast theme, make sure you set your theme after this line if you use this 
 Bundle 'jpo/vim-railscasts-theme'
+colorscheme railscasts             "Specified later because we load color schemes in Bundles
 " Git support in vim
 Bundle 'tpope/vim-fugitive'
 
