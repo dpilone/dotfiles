@@ -50,7 +50,7 @@ ZSH_THEME="fino-time-shortpath"
 # =======================================================
 # Set to this to use case-sensitive completion
 # =======================================================
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # =======================================================
 # Comment this out to disable bi-weekly auto-update checks
