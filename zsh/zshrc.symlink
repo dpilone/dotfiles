@@ -104,3 +104,7 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 # =======================================================
 setopt NO_cdable_vars
 
+# =======================================================
+# I want to manually push/pop directories onto the dir stack
+# =======================================================
+unsetopt autopushd
