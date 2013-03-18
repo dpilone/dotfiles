@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils tree
+brew install grc coreutils tree macvim
 
 exit 0
