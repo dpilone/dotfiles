@@ -17,6 +17,7 @@ set visualbell		            "turn off the audible beep
 set modeline		            "Let files give hints for syntax and whatnot
 set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
 set showcmd                         "Display partial commands
+set scrolloff=3                     "Leave a little context around the current line when scrolling.
 
 " Add window switching support using Control-hjklq
 nnoremap <C-J> <C-W>j
@@ -58,6 +59,15 @@ set encoding=utf-8                  " Necessary to show Unicode glyphs
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
+" Some Ctrl-P goodness from http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>F :CtrlP %%<cr>
+map <leader>b :CtrlPBuffer<cr>
+
+let g:ctrlp_root_markers = ['.git', 'tags']
+" clear the search buffer when hitting return
+:nnoremap <CR> :nohlsearch<cr>
+
 " ==============================================
 " Vundle setup and initialization.
 
@@ -95,6 +105,7 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 " Comment / uncomment
 Bundle 'tpope/vim-commentary'
+Bundle 'jpo/vim-railscasts-theme'
 
 " original repos on github
 " Bundle 'tpope/vim-fugitive'
