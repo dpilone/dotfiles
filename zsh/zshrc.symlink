@@ -98,3 +98,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # =======================================================
 ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 
+# =======================================================
+# Found this on https://github.com/robbyrussell/oh-my-zsh/issues/238
+# and it appears to significantly speed up tab-completion.
+# =======================================================
+setopt NO_cdable_vars
+
