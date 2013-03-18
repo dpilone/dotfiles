@@ -1,34 +1,35 @@
 syntax on
 set nocompatible               " be iMproved
 filetype off                   " required!
-colorscheme koehler
-set incsearch		"search as you type
-set hlsearch		"highlight the search
-set ignorecase		"ignore case...
-set smartcase		"unless the search uses uppercase letters
-set wildmode=longest:full "make filename completion like the terminal...
-set wildmenu		"and enable the tab-completion menu
-set wildignore=*.bak,*.tmp,*.sw[pno]
-set whichwrap=b,s,h,l,<,>,~,[,] "Moving left and right will wrap around to next/prev line
-set backspace=indent,eol,start 	"Backspace will delete whatever is behind your cursor and wrap
-set visualbell		"turn off the audible beep
-set modeline		"Let files give hints for syntax and whatnot
-set formatoptions-=cro  "Don't wrap my comments and don't automatically assume the next line is a comment.
+colorscheme torte
 
-" Fix up some commands to make things a little more usable
-" Window switching
+" General Preferences
+set incsearch		            "search as you type
+set hlsearch		            "highlight the search
+set ignorecase		            "ignore case...
+set smartcase		            "unless the search uses uppercase letters
+set wildmode=longest:full           "make filename completion like the terminal...
+set wildmenu		            "and enable the tab-completion menu
+set wildignore=*.bak,*.tmp,*.sw[pno]
+set whichwrap=b,s,h,l,<,>,~,[,]     "Moving left and right will wrap around to next/prev line
+set backspace=indent,eol,start      "Backspace will delete whatever is behind your cursor and wrap
+set visualbell		            "turn off the audible beep
+set modeline		            "Let files give hints for syntax and whatnot
+set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
+set showcmd                         "Display partial commands
+
+" Add window switching support using Control-hjklq
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-Q> <C-W>q
 
-"be smarter about multiple buffers / vim instances
-"quick buffer switching with TAB, even with edited files
-set hidden              "Let me switch buffers even with modifications
+" Quick buffer switching with TAB, even with edited files
+set hidden                          "Let me switch buffers even with modifications
 nmap <C-TAB> :bn<CR> 
 nmap <C-S-TAB> :bp<CR>
-set autoread            "auto-reload files, if there's no conflict
+set autoread                        "auto-reload files, if there's no conflict
 
 "Indentation Stuff
 set expandtab                       "use spaces, not tabs
@@ -38,7 +39,7 @@ set smarttab                        "backspace to remove space-indents
 set autoindent                      "auto-indent for code blocks
 "DONT USE: smartindent              "it does stupid things with comments
 
-"smart indenting by filetype, better than smartindent
+"smart indenting by filetype, better than smartindent and required for vundle
 filetype on
 filetype indent on
 filetype plugin on
@@ -49,21 +50,22 @@ nnoremap <C-I> :<c-u>call MultiCursorSearch('')<cr>
 let g:multicursor_quit = "<C-A-K>"
 
 " Powerline Requirements
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
+set nocompatible                    " Disable vi-compatibility
+set laststatus=2                    " Always show the statusline
+set encoding=utf-8                  " Necessary to show Unicode glyphs
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
-" ----------------------------------------------
-" For Vundler
+" ==============================================
+" Vundle setup and initialization.
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-" ----------------------------------------------
 
+" ==============================================
 " My Bundles here:
 " Powerline
 Bundle 'Lokaltog/vim-powerline' 
@@ -81,7 +83,7 @@ Bundle 'skwp/greplace.vim'
 Bundle 'vim-ruby/vim-ruby'
 " Judo Rails support
 Bundle 'tpope/vim-rails'
-" Matchit
+" Matchit to let % match method start ends, tags, etc.
 Bundle 'vim-scripts/matchit.zip'
 " Ruby refactoring support
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -92,22 +94,12 @@ Bundle 'tpope/vim-cucumber'
 " Add appropriate keywords after if, do, etc.
 Bundle 'tpope/vim-endwise'
 " Comment / uncomment
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-commentary'
 
 " original repos on github
 " Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
 
-filetype plugin indent on     " required!
-"
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
