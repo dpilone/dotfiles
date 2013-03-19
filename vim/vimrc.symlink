@@ -1,7 +1,7 @@
 syntax on
 set nocompatible                    " be iMproved
 filetype off                        " required!
-colorscheme slate             "Specified later because we load color schemes in Bundles
+colorscheme slate 
 
 " General Preferences
 set incsearch		            "search as you type
