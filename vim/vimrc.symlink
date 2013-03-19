@@ -1,6 +1,5 @@
-syntax on
+syntax on                           " Lots of syntax highlighting
 set nocompatible                    " be iMproved
-filetype off                        " required!
 colorscheme pablo
 
 " General Preferences
@@ -16,6 +15,7 @@ set backspace=indent,eol,start      "Backspace will delete whatever is behind yo
 set visualbell                      "turn off the audible beep
 set modeline                        "Let files give hints for syntax and whatnot
 set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
+                                    "You may need to override this in format specific file types.
 set showcmd                         "Display partial commands
 set scrolloff=5                     "Leave a little context around the current line when scrolling.
 
@@ -117,11 +117,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 " Git support in vim
 Bundle 'tpope/vim-fugitive'
-
-
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Brief help
 " :BundleList          - list configured bundles
