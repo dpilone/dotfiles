@@ -17,7 +17,7 @@ set visualbell		            "turn off the audible beep
 set modeline		            "Let files give hints for syntax and whatnot
 set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
 set showcmd                         "Display partial commands
-set scrolloff=3                     "Leave a little context around the current line when scrolling.
+set scrolloff=5                     "Leave a little context around the current line when scrolling.
 set guifont=Monaco:h11              "Pick a reasonable font for OSX
 set noantialias                     "Turn off antialiasing - it makes things look really blurry.
 
