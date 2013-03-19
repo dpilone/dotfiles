@@ -1,25 +1,31 @@
 syntax on
 set nocompatible                    " be iMproved
 filetype off                        " required!
-colorscheme slate 
+colorscheme pablo
 
 " General Preferences
-set incsearch		            "search as you type
-set hlsearch		            "highlight the search
-set ignorecase		            "ignore case...
-set smartcase		            "unless the search uses uppercase letters
+set incsearch                       "search as you type
+set hlsearch                        "highlight the search
+set ignorecase                      "ignore case...
+set smartcase                       "unless the search uses uppercase letters
 set wildmode=longest:full           "make filename completion like the terminal...
-set wildmenu		            "and enable the tab-completion menu
+set wildmenu                        "and enable the tab-completion menu
 set wildignore=*.bak,*.tmp,*.sw[pno]
 set whichwrap=b,s,h,l,<,>,~,[,]     "Moving left and right will wrap around to next/prev line
 set backspace=indent,eol,start      "Backspace will delete whatever is behind your cursor and wrap
-set visualbell		            "turn off the audible beep
-set modeline		            "Let files give hints for syntax and whatnot
+set visualbell                      "turn off the audible beep
+set modeline                        "Let files give hints for syntax and whatnot
 set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
 set showcmd                         "Display partial commands
 set scrolloff=5                     "Leave a little context around the current line when scrolling.
-set guifont=Monaco:h11              "Pick a reasonable font for OSX
-set noantialias                     "Turn off antialiasing - it makes things look really blurry.
+
+" MacVim gui specific settings
+if has('gui_running')
+  set guifont=Monaco:h12            " set fonts for gui vim
+  set transparency=5                " set transparent window
+  set guioptions=egmrt              " hide the gui menubar
+  set noantialias                     "Turn off antialiasing - it makes things look really blurry.
+endif
 
 " Add window switching support using Control-hjklq
 nnoremap <C-J> <C-W>j
@@ -28,9 +34,13 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-Q> <C-W>q
 
+" Highlight extra space at the end of lines, etc...
+highlight RedundantWhitespace ctermbg=red guibg=darkred
+match RedundantWhitespace /\s\+$\|\t/
+
 " Quick buffer switching with TAB, even with edited files
 set hidden                          "Let me switch buffers even with modifications
-nmap <C-TAB> :bn<CR> 
+nmap <C-TAB> :bn<CR>
 nmap <C-S-TAB> :bp<CR>
 set autoread                        "auto-reload files, if there's no conflict
 
@@ -80,13 +90,13 @@ Bundle 'gmarik/vundle'
 " ==============================================
 " My Bundles here:
 " Powerline
-Bundle 'Lokaltog/vim-powerline' 
+Bundle 'Lokaltog/vim-powerline'
 " Fuzzy file finding (Control-P)
-Bundle 'kien/ctrlp.vim' 
+Bundle 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
-Bundle 'docunext/closetag.vim' 
+Bundle 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
-Bundle 'Lokaltog/vim-easymotion' 
+Bundle 'Lokaltog/vim-easymotion'
 " Multiple cursor support a-la sublime
 Bundle 'paradigm/vim-multicursor'
 " Multifile grep search and replace support
@@ -97,8 +107,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 " Matchit to let % match method start ends, tags, etc.
 Bundle 'vim-scripts/matchit.zip'
-" Ruby refactoring support
-Bundle 'ecomba/vim-ruby-refactoring'
 " Bundler support
 Bundle 'tpope/vim-bundler'
 " Cucumber support
