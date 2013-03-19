@@ -1,7 +1,7 @@
 syntax on
 set nocompatible                    " be iMproved
 filetype off                        " required!
-colorscheme koehler             "Specified later because we load color schemes in Bundles
+colorscheme slate             "Specified later because we load color schemes in Bundles
 
 " General Preferences
 set incsearch		            "search as you type
@@ -18,6 +18,8 @@ set modeline		            "Let files give hints for syntax and whatnot
 set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
 set showcmd                         "Display partial commands
 set scrolloff=3                     "Leave a little context around the current line when scrolling.
+set guifont=Monaco:h11              "Pick a reasonable font for OSX
+set noantialias                     "Turn off antialiasing - it makes things look really blurry.
 
 " Add window switching support using Control-hjklq
 nnoremap <C-J> <C-W>j
