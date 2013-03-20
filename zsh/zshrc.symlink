@@ -115,4 +115,4 @@ unsetopt autopushd
 # =======================================================
 bindkey -v
 bindkey -M vicmd '?' history-incremental-search-backward
-bindkey ‘^R’ history-incremental-search-backward
+bindkey '^R' history-incremental-search-backward
