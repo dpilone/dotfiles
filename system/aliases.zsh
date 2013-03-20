@@ -4,7 +4,6 @@
 alias grep="grep --color=auto"
 alias pgrep='ps aux | grep -v grep | grep'
 alias ss="open -a 'screen sharing'"
-alias ge='mvim --remote-silent'
 alias ls='ls -GF'
 
 # =======================================================
@@ -25,4 +24,14 @@ fi
 if [[ "$(uname -s)" == "Linux" ]]
 then
   alias ls="ls -GF --color"
+  alias ge='vi'
+fi 
+
+# =======================================================
+# OSX specific aliases / fixes.
+# =======================================================
+if [[ "$(uname -s)" == "Darwin" ]]
+then
+  alias vi="mvim -v"
+  alias ge='mvim --remote-tab-silent'
 fi 
