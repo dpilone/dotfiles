@@ -44,7 +44,7 @@ nmap <C-TAB> :bn<CR>
 nmap <C-S-TAB> :bp<CR>
 set autoread                        "auto-reload files, if there's no conflict
 
-"Indentation Stuff
+" Indentation Stuff
 set expandtab                       "use spaces, not tabs
 set softtabstop=2 shiftwidth=2      "2-space indents
 set shiftround                      "always use a multiple of 4 for indents
@@ -75,6 +75,15 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,mako source ~/.vim/bundle/c
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Pressing <leader>ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
 
 let g:ctrlp_root_markers = ['.git', 'tags']
 " clear the search buffer when hitting return
