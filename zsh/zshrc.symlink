@@ -108,3 +108,10 @@ setopt NO_cdable_vars
 # I want to manually push/pop directories onto the dir stack
 # =======================================================
 unsetopt autopushd
+
+# =======================================================
+# I use vim and don't want to have to remember where I am.
+# But reverse history search freaking rocks, put that back.
+# =======================================================
+bindkey -v
+bindkey -M vicmd '?' history-incremental-search-backward
