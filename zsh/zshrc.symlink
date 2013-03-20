@@ -83,7 +83,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # =======================================================
-plugins=(git osx rvm zsh-syntax-highlighting)
+plugins=(git osx rvm zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,6 +113,6 @@ unsetopt autopushd
 # I use vim and don't want to have to remember where I am.
 # But reverse history search freaking rocks, put that back.
 # =======================================================
-bindkey -v
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey '^R' history-incremental-search-backward
+
