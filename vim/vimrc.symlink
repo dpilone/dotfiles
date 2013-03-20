@@ -96,6 +96,12 @@ let g:ctrlp_root_markers = ['.git', 'tags']
 :nnoremap <CR> :nohlsearch<cr>
 
 " ==============================================
+" Load any private configuration
+if filereadable(glob("~/.vimrc.private")) 
+    source ~/.vimrc.private
+endif
+
+" ==============================================
 " Vundle setup and initialization.
 
 set rtp+=~/.vim/bundle/vundle/
@@ -132,6 +138,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 " Git support in vim
 Bundle 'tpope/vim-fugitive'
+" Evernote support - Note you'll need to install this: https://pypi.python.org/pypi/Markdown
+Bundle 'kakkyz81/evervim'
 
 " Brief help
 " :BundleList          - list configured bundles
