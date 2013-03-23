@@ -24,7 +24,7 @@ done
 
 # -------------------------------------------------------
 # Load everything but the path and completion files
-# NOTE: I removed support for the completion files in 
+# NOTE: I removed support for the completion files in
 # favor of oh-my-zsh completion support.
 # -------------------------------------------------------
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
@@ -88,7 +88,7 @@ plugins=(zsh-syntax-highlighting vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # =======================================================
-# Customize to your needs...
+# RVM Integration
 # =======================================================
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -117,7 +117,9 @@ bindkey -M vicmd '?' history-incremental-search-backward
 bindkey '^R' history-incremental-search-backward
 
 # =======================================================
-# Found this on http://tlvince.com/slow-zsh-completion
-# and it helps with completion performance.
+# Found this on http://lethalman.blogspot.com/2009/10/speeding-up-zsh-completion.html
+# and it helps with completion performance by assuming
+# the first part of the path is exact and it doesn't have
+# to do partial globs.
 # =======================================================
-zstyle ':completion:*' hosts off
+zstyle ':completion:*' accept-exact '*(N)'
