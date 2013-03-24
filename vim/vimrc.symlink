@@ -1,5 +1,5 @@
-syntax on                           " Lots of syntax highlighting
-set nocompatible                    " be iMproved
+syntax on                           "lots of syntax highlighting
+set nocompatible                    "be iMproved
 colorscheme pablo
 
 " General Preferences
@@ -7,25 +7,27 @@ set incsearch                       "search as you type
 set hlsearch                        "highlight the search
 set ignorecase                      "ignore case...
 set smartcase                       "unless the search uses uppercase letters
+set gdefault                        "apply substitutions globally (whole line) by default
 set wildmode=longest:full           "make filename completion like the terminal...
 set wildmenu                        "and enable the tab-completion menu
 set wildignore=*.bak,*.tmp,*.sw[pno]
-set whichwrap=b,s,h,l,<,>,~,[,]     "Moving left and right will wrap around to next/prev line
-set backspace=indent,eol,start      "Backspace will delete whatever is behind your cursor and wrap
+set whichwrap=b,s,h,l,<,>,~,[,]     "moving left and right will wrap around to next/prev line
+set backspace=indent,eol,start      "backspace will delete whatever is behind your cursor and wrap
 set visualbell                      "turn off the audible beep
-set modeline                        "Let files give hints for syntax and whatnot
-set formatoptions-=cro              "Don't wrap my comments and don't automatically assume the next line is a comment.
-                                    "You may need to override this in format specific file types.
-set showcmd                         "Display partial commands
-set scrolloff=5                     "Leave a little context around the current line when scrolling.
-let mapleader=","                   "Change the leader key to be , to make it easier to hit.
+set modeline                        "let files give hints for syntax and whatnot
+set formatoptions-=cro              "don't wrap my comments and don't automatically assume the next line is a comment.
+                                    "you may need to override this in format specific file types.
+set showcmd                         "display partial commands
+set showmatch                       "show matching brackets briefly
+set scrolloff=5                     "leave a little context around the current line when scrolling.
+let mapleader=","                   "change the leader key to be ',' to make it easier to hit.
 
 " MacVim gui specific settings
 if has('gui_running')
-  set guifont=Monaco:h12            " set fonts for gui vim
-  set transparency=5                " set transparent window
-  set guioptions=egmrt              " hide the gui menubar
-  set noantialias                     "Turn off antialiasing - it makes things look really blurry.
+  set guifont=Monaco:h12            "set fonts for gui vim
+  set transparency=5                "set transparent window
+  set guioptions=egmrt              "hide the gui menubar
+  set noantialias                   "turn off antialiasing - it makes things look really blurry.
 endif
 
 " Add window switching support using Control-hjklq
@@ -59,8 +61,8 @@ filetype indent on
 filetype plugin on
 
 " Multicursor Settings
-xnoremap <C-L> :<c-u>call MultiCursorVisual()<cr>
-nnoremap <C-I> :<c-u>call MultiCursorSearch('')<cr>
+xnoremap <leader>mc :<c-u>call MultiCursorVisual()<cr>
+nnoremap <leader>ms :<c-u>call MultiCursorSearch('')<cr>
 let g:multicursor_quit = "<C-A-K>"
 
 " Powerline Requirements
