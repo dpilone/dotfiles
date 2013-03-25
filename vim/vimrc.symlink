@@ -37,6 +37,10 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-Q> <C-W>q
 
+" Make jk behave like you'd expect with wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Highlight extra space at the end of lines, etc...
 highlight RedundantWhitespace ctermbg=red guibg=darkred
 match RedundantWhitespace /\s\+$\|\t/
@@ -93,6 +97,9 @@ map <leader>ss :setlocal spell!<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Enable docuwiki syntax for the current buffer
+map <leader>dw :set ft=dokuwiki<cr>
+
 let g:ctrlp_root_markers = ['.git', 'tags']
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
@@ -146,6 +153,8 @@ Bundle 'kakkyz81/evervim'
 Bundle 'scrooloose/nerdtree'
 " Add surround support to surround text with stuff.
 Bundle 'tpope/vim-surround'
+" Docuwiki editing support
+Bundle 'nblock/vim-dokuwiki'
 
 " Brief help
 " :BundleList          - list configured bundles
