@@ -1,6 +1,6 @@
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-colorscheme pablo
+colorscheme mustang
 
 " General Preferences
 set incsearch                       "search as you type
