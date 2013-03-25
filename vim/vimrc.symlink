@@ -142,6 +142,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 " Evernote support - Note you'll need to install this: https://pypi.python.org/pypi/Markdown
 Bundle 'kakkyz81/evervim'
+" Tree browsing goodness
+Bundle 'scrooloose/nerdtree'
 
 " Brief help
 " :BundleList          - list configured bundles
