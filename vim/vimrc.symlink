@@ -144,6 +144,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kakkyz81/evervim'
 " Tree browsing goodness
 Bundle 'scrooloose/nerdtree'
+" Add surround support to surround text with stuff.
+Bundle 'tpope/vim-surround'
 
 " Brief help
 " :BundleList          - list configured bundles
