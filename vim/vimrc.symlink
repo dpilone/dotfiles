@@ -20,6 +20,7 @@ set formatoptions-=cro              "don't wrap my comments and don't automatica
 set showcmd                         "display partial commands
 set showmatch                       "show matching brackets briefly
 set scrolloff=5                     "leave a little context around the current line when scrolling.
+set title                           "set the title to be the name of the file we're editing.
 let mapleader=","                   "change the leader key to be ',' to make it easier to hit.
 
 " MacVim gui specific settings
