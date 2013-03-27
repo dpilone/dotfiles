@@ -4,7 +4,7 @@
 " plugins are loaded.
 
 set nocompatible                    " required for Vundle
-set filetype off                    " required for Vundle, enabled later.
+filetype off                        " required for Vundle, enabled later.
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
