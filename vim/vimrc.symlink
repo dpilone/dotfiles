@@ -21,7 +21,7 @@ Bundle 'Lokaltog/vim-easymotion'
 " Multiple cursor support a-la sublime
 Bundle 'paradigm/vim-multicursor'
 " Multifile grep search and replace support
-Bundle 'skwp/greplace.vim'
+Bundle 'vim-scripts/EasyGrep'
 " Ninja Ruby support
 Bundle 'vim-ruby/vim-ruby'
 " Judo Rails support
