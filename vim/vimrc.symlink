@@ -57,7 +57,7 @@ Bundle 'vim-scripts/UltiSnips'
 
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-colorscheme mustang
+colorscheme vividchalk
 
 " General Preferences
 set incsearch                       "search as you type
