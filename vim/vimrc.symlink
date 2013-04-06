@@ -48,6 +48,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'nblock/vim-dokuwiki'
 " Clojure syntax highlighting
 Bundle 'guns/vim-clojure-static'
+" Textmate Snippet Support
+Bundle 'vim-scripts/UltiSnips'
 
 " =======================================================================
 " Actual vim configuration goes here.
@@ -124,6 +126,11 @@ filetype plugin on
 xnoremap <leader>mc :<c-u>call MultiCursorVisual()<cr>
 nnoremap <leader>ms :<c-u>call MultiCursorSearch('')<cr>
 let g:multicursor_quit = "<C-A-K>"
+
+" UltiSnip bindings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Powerline Requirements
 set nocompatible                    " Disable vi-compatibility
