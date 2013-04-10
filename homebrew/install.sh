@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils tree macvim
+brew install grc coreutils tree macvim tmux
 
 exit 0
