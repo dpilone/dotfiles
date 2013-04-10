@@ -57,7 +57,9 @@ Bundle 'vim-scripts/UltiSnips'
 
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-colorscheme vividchalk
+colorscheme solarized
+set background=dark                 "assume we're on a dark background for solarized colors
+let g:solarized_termcolors=256      "assume we're on a dark background for colors
 
 " General Preferences
 set incsearch                       "search as you type
@@ -78,6 +80,8 @@ set showcmd                         "display partial commands
 set showmatch                       "show matching brackets briefly
 set scrolloff=5                     "leave a little context around the current line when scrolling.
 set title                           "set the title to be the name of the file we're editing.
+set number                          "show line numbers
+set listchars=tab:»\ ,eol:¬,extends:▸ "set custom tab, wrap, and end of line characters
 let mapleader=","                   "change the leader key to be ',' to make it easier to hit.
 
 " MacVim gui specific settings
