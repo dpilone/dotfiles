@@ -1,6 +1,7 @@
 " =======================================================================
 " Vundle setup and initialization. This needs
 " to be done before any configuration so all
+
 " plugins are loaded.
 
 set nocompatible                    " required for Vundle
@@ -141,6 +142,7 @@ set nocompatible                    " Disable vi-compatibility
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " Necessary to show Unicode glyphs
 let g:Powerline_symbols = 'fancy'   " We have the custom font setup.
+let g:Powerline_colorscheme = 'solarized256'
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
