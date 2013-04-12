@@ -34,10 +34,20 @@ done
 
 unset config_files
 
+# =======================================================
 # Source Prezto.
+# =======================================================
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# =======================================================
+# Source Prezto.
+# =======================================================
+# Make everything use VI keys
+set -o vi
+export EDITOR=vim
+export VISUAL=vim
 
 # =======================================================
 # RVM Integration
