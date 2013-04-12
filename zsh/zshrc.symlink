@@ -50,6 +50,18 @@ export EDITOR=vim
 export VISUAL=vim
 
 # =======================================================
+# To have paths colored instead of underlined
+# =======================================================
+ZSH_HIGHLIGHT_STYLES[path]='fg=white'
+
+# =======================================================
+# I use vim and don't want to have to remember where I am.
+# But reverse history search freaking rocks, put that back.
+# =======================================================
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey '^R' history-incremental-search-backward
+
+# =======================================================
 # RVM Integration
 # =======================================================
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
