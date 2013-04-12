@@ -7,3 +7,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "zprezto.symlink"]
+	path = zprezto.symlink
+	url = https://github.com/Element84/prezto.git
