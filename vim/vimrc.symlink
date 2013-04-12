@@ -86,10 +86,10 @@ let mapleader=","                   "change the leader key to be ',' to make it 
 
 " MacVim gui specific settings
 if has('gui_running')
-  set guifont=Monaco:h12            "set fonts for gui vim
-  set transparency=5                "set transparent window
+  set t_Co=256                      "our terminal supports 256 colors
   set guioptions=egmrt              "hide the gui menubar
-  set noantialias                   "turn off antialiasing - it makes things look really blurry.
+  set noantialias                  "turn off antialiasing - it makes things look really blurry.
+  set guifont=Inconsolata\ XL:h12,Inconsolata:h12,Monaco:h12 "set fonts for gui vim
 endif
 
 " Add window switching support using Control-hjklq
@@ -140,6 +140,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 set nocompatible                    " Disable vi-compatibility
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " Necessary to show Unicode glyphs
+let g:Powerline_symbols = 'fancy'   " We have the custom font setup.
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
