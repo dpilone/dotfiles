@@ -89,7 +89,7 @@ let mapleader=","                   "change the leader key to be ',' to make it 
 if has('gui_running')
   set t_Co=256                      "our terminal supports 256 colors
   set guioptions=egmrt              "hide the gui menubar
-  set noantialias                  "turn off antialiasing - it makes things look really blurry.
+  "set noantialias                  "turn off antialiasing - it makes things look really blurry.
   set guifont=Inconsolata\ XL:h12,Inconsolata:h12,Monaco:h12 "set fonts for gui vim
 endif
 
