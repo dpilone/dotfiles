@@ -149,7 +149,7 @@ fi
 info "updating vim bundles"
 if vim +BundleInstall! +BundleClean! +qall > /tmp/vundle-update 2>&1
 then
-  success "vim bundles updated."
+  success "vim bundles updated"
 else
   fail "error updating vim bundles"
 fi
