@@ -79,7 +79,7 @@ set formatoptions-=cro              "don't wrap my comments and don't automatica
                                     "you may need to override this in format specific file types.
 set showcmd                         "display partial commands
 set showmatch                       "show matching brackets briefly
-set scrolloff=5                     "leave a little context around the current line when scrolling.
+set scrolloff=8                     "leave a little context around the current line when scrolling.
 set title                           "set the title to be the name of the file we're editing.
 set number                          "show line numbers
 set listchars=tab:»\ ,eol:¬,extends:▸ "set custom tab, wrap, and end of line characters
