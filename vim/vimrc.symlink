@@ -168,6 +168,8 @@ nmap <leader>a<bar> :Tabularize /<bar><CR>
 vmap <leader>a<bar> :Tabularize /<bar><CR>
 nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
+nmap <leader>a> :Tabularize /=><CR>
+vmap <leader>a> :Tabularize /=><CR>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
