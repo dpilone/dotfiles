@@ -6,7 +6,8 @@ alias pgrep='ps aux | grep -v grep | grep'
 alias ss="open -a 'screen sharing'"
 alias ls='ls -GF'
 alias rm='nocorrect rm'
-alias rvmc='rvm --create --ruby-version'
+alias rvmnew='rvm --create --ruby-version'
+alias rvmc='rvm current'
 
 # =======================================================
 # Override the basic aliases if we have GNU coreutils available
