@@ -51,6 +51,8 @@ Bundle 'nblock/vim-dokuwiki'
 Bundle 'guns/vim-clojure-static'
 " Textmate Snippet Support
 Bundle 'vim-scripts/UltiSnips'
+" Awesome character alignment
+Bundle 'godlygeek/tabular'
 
 " =======================================================================
 " Actual vim configuration goes here.
@@ -158,6 +160,14 @@ nmap . .`[
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
+
+" Some convenient tabularize mappings
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a<bar> :Tabularize /<bar><CR>
+vmap <leader>a<bar> :Tabularize /<bar><CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
