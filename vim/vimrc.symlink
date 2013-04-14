@@ -162,14 +162,17 @@ map <leader>f :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
 
 " Some convenient tabularize mappings
-nmap <leader>a= :Tabularize /=<CR>
-vmap <leader>a= :Tabularize /=<CR>
-nmap <leader>a<bar> :Tabularize /<bar><CR>
-vmap <leader>a<bar> :Tabularize /<bar><CR>
-nmap <leader>a: :Tabularize /:\zs<CR>
-vmap <leader>a: :Tabularize /:\zs<CR>
-nmap <leader>a> :Tabularize /=><CR>
-vmap <leader>a> :Tabularize /=><CR>
+nmap <leader>a= :Tabularize /=<cr>
+vmap <leader>a= :Tabularize /=<cr>
+nmap <leader>a<bar> :Tabularize /<bar><cr>
+vmap <leader>a<bar> :Tabularize /<bar><cr>
+nmap <leader>a: :Tabularize /:\zs<cr>
+vmap <leader>a: :Tabularize /:\zs<cr>
+nmap <leader>a> :Tabularize /=><cr>
+vmap <leader>a> :Tabularize /=><cr>
+
+" Bring up NERDTree
+map <leader>nt :NERDTree<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
