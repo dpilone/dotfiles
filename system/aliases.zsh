@@ -5,6 +5,8 @@ alias grep="grep --color=auto"
 alias pgrep='ps aux | grep -v grep | grep'
 alias ss="open -a 'screen sharing'"
 alias ls='ls -GF'
+alias rm='nocorrect rm'
+alias rvmc='rvm --create --ruby-version'
 
 # =======================================================
 # Override the basic aliases if we have GNU coreutils available
@@ -25,7 +27,7 @@ if [[ "$(uname -s)" == "Linux" ]]
 then
   alias ls="ls -GF --color"
   alias ge='vi'
-fi 
+fi
 
 # =======================================================
 # OSX specific aliases / fixes.
@@ -34,4 +36,4 @@ if [[ "$(uname -s)" == "Darwin" ]]
 then
   alias vi="mvim -v"
   alias ge='mvim --remote-tab-silent'
-fi 
+fi
