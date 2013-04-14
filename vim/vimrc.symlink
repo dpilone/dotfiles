@@ -170,6 +170,9 @@ map <leader>pp :setlocal paste!<cr>
 " Enable docuwiki syntax for the current buffer
 map <leader>dw :set ft=dokuwiki<cr>
 
+" Shortcut for Gstatus
+map <leader>gs :Gstatus<cr>
+
 let g:ctrlp_root_markers = ['.git', 'tags']
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
