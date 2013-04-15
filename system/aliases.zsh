@@ -8,6 +8,7 @@ alias ls='ls -GF'
 alias rm='nocorrect rm'
 alias rvmnew='rvm --create --ruby-version'
 alias rvmc='rvm current'
+alias rvmempty='rvm --force gemset empty'
 
 # =======================================================
 # Override the basic aliases if we have GNU coreutils available
