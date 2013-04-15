@@ -82,7 +82,8 @@ set showmatch                       "show matching brackets briefly
 set scrolloff=8                     "leave a little context around the current line when scrolling.
 set title                           "set the title to be the name of the file we're editing.
 set number                          "show line numbers
-set listchars=tab:»\ ,eol:¬,trail:·,extends:▸ "set custom tab, wrap, and end of line characters
+set list                            "show special characters
+set listchars=tab:»\ ,trail:·,extends:▸ "set custom tab, wrap, and end of line characters
 let mapleader=","                   "change the leader key to be ',' to make it easier to hit.
 
 " MacVim gui specific settings
