@@ -82,7 +82,7 @@ set showmatch                       "show matching brackets briefly
 set scrolloff=8                     "leave a little context around the current line when scrolling.
 set title                           "set the title to be the name of the file we're editing.
 set number                          "show line numbers
-set listchars=tab:»\ ,eol:¬,extends:▸ "set custom tab, wrap, and end of line characters
+set listchars=tab:»\ ,eol:¬,trail:·,extends:▸ "set custom tab, wrap, and end of line characters
 let mapleader=","                   "change the leader key to be ',' to make it easier to hit.
 
 " MacVim gui specific settings
@@ -105,8 +105,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Highlight extra space at the end of lines, etc...
-highlight RedundantWhitespace ctermbg=red guibg=darkred
-match RedundantWhitespace /\s\+$\|\t/
+"highlight RedundantWhitespace ctermbg=red guibg=darkred
+"match RedundantWhitespace /\s\+$\|\t/
 
 " Quick buffer switching with TAB, even with edited files
 set hidden                          "Let me switch buffers even with modifications
