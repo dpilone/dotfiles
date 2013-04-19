@@ -53,6 +53,10 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'vim-scripts/UltiSnips'
 " Awesome character alignment
 Bundle 'godlygeek/tabular'
+" Asynchronous process (terminals, rspec, etc.) support
+Bundle "rson/vim-conque"
+" Rspec and cucumber running support
+Bundle "skwp/vim-ruby-conque"
 
 " =======================================================================
 " Actual vim configuration goes here.
