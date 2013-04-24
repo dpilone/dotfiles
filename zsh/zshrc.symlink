@@ -1,9 +1,5 @@
-# =======================================================
-# Source Prezto.
-# =======================================================
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
 
 # =======================================================
 # Use .localrc for SUPER SECRET STUFF that you don't
@@ -19,7 +15,7 @@ fi
 # =======================================================
 typeset -U config_files
 setopt extendedglob
-config_files=($HOME/.dotfiles/^(zprezto.symlink|oh-my-zsh)/**/*.zsh)
+config_files=($HOME/.dotfiles/^(zprezto.symlink|oh-my-zsh|zsh-syntax-highlighting)/**/*.zsh)
 
 # -------------------------------------------------------
 # Load the path files
@@ -31,10 +27,17 @@ done
 
 # -------------------------------------------------------
 # Load everything but the path and completion files
-# NOTE: I removed support for the completion files in
-# favor of oh-my-zsh completion support.
 # -------------------------------------------------------
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -Uz compinit && compinit -i
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
 do
   source $file
 done
@@ -51,6 +54,7 @@ export VISUAL=vim
 # =======================================================
 # To have paths colored instead of underlined
 # =======================================================
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 
 # =======================================================

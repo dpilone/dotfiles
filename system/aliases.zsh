@@ -1,4 +1,51 @@
 # =======================================================
+# Disable correction.
+# =======================================================
+alias ack='nocorrect ack'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias ebuild='nocorrect ebuild'
+alias gcc='nocorrect gcc'
+alias gist='nocorrect gist'
+alias grep='nocorrect grep'
+alias heroku='nocorrect heroku'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias mysql='nocorrect mysql'
+alias rm='nocorrect rm'
+
+# =======================================================
+# Disable globbing.
+# =======================================================
+alias fc='noglob fc'
+alias find='noglob find'
+alias ftp='noglob ftp'
+alias history='noglob history'
+alias locate='noglob locate'
+alias rake='noglob rake'
+alias rsync='noglob rsync'
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+
+# =======================================================
+# Define general aliases.
+# =======================================================
+alias _='sudo'
+alias b='${(z)BROWSER}'
+alias cp="${aliases[cp]:-cp} -i"
+alias e='${(z)VISUAL:-${(z)EDITOR}}'
+alias ln="${aliases[ln]:-ln} -i"
+alias mkdir="${aliases[mkdir]:-mkdir} -p"
+alias mv="${aliases[mv]:-mv} -i"
+alias p='${(z)PAGER}'
+alias po='popd'
+alias pu='pushd'
+alias rm="${aliases[rm]:-rm} -i"
+alias type='type -a'
+
+# =======================================================
 # Basic aliases - should be cross platform or override below.
 # =======================================================
 alias grep="grep --color=auto"
@@ -9,6 +56,28 @@ alias rm='nocorrect rm'
 alias rvmnew='rvm --create --ruby-version'
 alias rvmc='rvm current'
 alias rvmempty='rvm --force gemset empty'
+
+# =======================================================
+# Setup to use a fancy top if available
+# =======================================================
+if (( $+commands[htop] )); then
+  alias top=htop
+else
+  alias topc='top -o cpu'
+  alias topm='top -o vsize'
+fi
+
+# =======================================================
+# Serves a directory via HTTP.
+# =======================================================
+alias http-serve='python -m SimpleHTTPServer'
+
+# =======================================================
+# Displays user owned processes status.
+# =======================================================
+function psu {
+  ps -U "${1:-$USER}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
+}
 
 # =======================================================
 # Override the basic aliases if we have GNU coreutils available
@@ -39,3 +108,5 @@ then
   alias vi="mvim -v"
   alias ge='mvim --remote-tab-silent'
 fi
+
+
