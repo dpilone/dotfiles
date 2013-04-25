@@ -58,6 +58,11 @@ source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 
 # =======================================================
+# Load my custom prompt.
+# =======================================================
+source $ZSH/liquidprompt/liquidprompt
+
+# =======================================================
 # I use vim and don't want to have to remember where I am.
 # But reverse history search freaking rocks, put that back.
 # =======================================================
