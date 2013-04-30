@@ -194,6 +194,10 @@ map <leader>dw :set ft=dokuwiki<cr>
 " Shortcut for Gstatus
 map <leader>gs :Gstatus<cr>
 
+" Setup some commands for formatting HTML and XML
+command Txml set ft=xml | execute "%!tidy -q -i -xml"
+command Thtml set ft=html | execute "%!tidy -q -i -html"
+
 let g:ctrlp_root_markers = ['.git', 'tags']
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
