@@ -20,7 +20,7 @@ Bundle 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
 Bundle 'Lokaltog/vim-easymotion'
 " Multiple cursor support a-la sublime
-Bundle 'paradigm/vim-multicursor'
+Bundle 'terryma/vim-multiple-cursors'
 " Multifile grep search and replace support
 Bundle 'vim-scripts/EasyGrep'
 " Ninja Ruby support
@@ -89,6 +89,7 @@ set scrolloff=8                     "leave a little context around the current l
 set title                           "set the title to be the name of the file we're editing.
 set splitright                      "put the new window on the right when vertically splitting
 set splitbelow                      "put the new window on the bottom when horizontally splitting
+set nobackup                        "don't create backup files
 set number                          "show line numbers
 set list                            "show special characters
 set listchars=tab:»\ ,trail:·,extends:▸ "set custom tab, wrap, and end of line characters
@@ -136,11 +137,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" Multicursor Settings
-xnoremap <leader>mc :<c-u>call MultiCursorVisual()<cr>
-nnoremap <leader>ms :<c-u>call MultiCursorSearch('')<cr>
-let g:multicursor_quit = "<C-A-K>"
-
 " UltiSnip bindings
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -169,6 +165,7 @@ nmap . .`[
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
+let g:ctrlp_cmd = 'CtrlPMixed'      "search anything (files, buffers, and MRU files)
 
 " Some convenient tabularize mappings
 nmap <leader>a= :Tabularize /=<cr>
