@@ -47,6 +47,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 " Docuwiki editing support
 Bundle 'nblock/vim-dokuwiki'
+" Clojure dynamic evaluation support
+Bundle 'tpope/vim-fireplace'
 " Clojure syntax highlighting
 Bundle 'guns/vim-clojure-static'
 " Textmate Snippet Support
@@ -57,8 +59,12 @@ Bundle 'godlygeek/tabular'
 Bundle "rson/vim-conque"
 " Rspec and cucumber running support
 Bundle "skwp/vim-ruby-conque"
+" Vim + tmux integration
+Bundle "benmills/vimux"
 " Applescript syntax highlighting.
 Bundle "vim-scripts/applescript.vim"
+" Run ruby tests through vimux
+Bundle 'skalnik/vim-vroom'
 
 " =======================================================================
 " Actual vim configuration goes here.
