@@ -1,3 +1,2 @@
-# Path for node.js
-export PATH="$HOME/local/bin:$PATH"
-export NODE_PATH="$HOME/local/lib/node_modules"
+# Path for node.js installed by Homebrew
+export PATH="/usr/local/share/npm/bin:$PATH"
