@@ -47,18 +47,20 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 " Docuwiki editing support
 Bundle 'nblock/vim-dokuwiki'
+" Clojure dynamic evaluation support
+Bundle 'tpope/vim-fireplace'
 " Clojure syntax highlighting
 Bundle 'guns/vim-clojure-static'
 " Textmate Snippet Support
 Bundle 'vim-scripts/UltiSnips'
 " Awesome character alignment
 Bundle 'godlygeek/tabular'
-" Asynchronous process (terminals, rspec, etc.) support
-Bundle "rson/vim-conque"
-" Rspec and cucumber running support
-Bundle "skwp/vim-ruby-conque"
+" Vim + tmux integration
+Bundle "benmills/vimux"
 " Applescript syntax highlighting.
 Bundle "vim-scripts/applescript.vim"
+" Run ruby tests through vimux
+Bundle 'skalnik/vim-vroom'
 
 " =======================================================================
 " Actual vim configuration goes here.
@@ -167,6 +169,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_cmd = 'CtrlPMixed'      "search anything (files, buffers, and MRU files)
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_root_markers = ['.git', 'tags']
 
 " Some convenient tabularize mappings
 nmap <leader>a= :Tabularize /=<cr>
@@ -200,7 +204,6 @@ map <leader>gs :Gstatus<cr>
 command Txml set ft=xml | execute "%!tidy -q -i -xml"
 command Thtml set ft=html | execute "%!tidy -q -i -html"
 
-let g:ctrlp_root_markers = ['.git', 'tags']
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 
