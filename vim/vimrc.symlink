@@ -61,6 +61,8 @@ Bundle "benmills/vimux"
 Bundle "vim-scripts/applescript.vim"
 " Run ruby tests through vimux
 Bundle 'skalnik/vim-vroom'
+" Support a scratch buffer
+Bundle 'duff/vim-scratch'
 
 " =======================================================================
 " Actual vim configuration goes here.
