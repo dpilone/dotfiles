@@ -37,6 +37,7 @@ setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
 setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
 unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
+unsetopt NOMATCH           # Disable the "zsh: no matches found" error so it behaves like bash
 
 # Treat these characters as part of a word.
 WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
