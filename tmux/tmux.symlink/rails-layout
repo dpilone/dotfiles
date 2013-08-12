@@ -6,3 +6,7 @@ splitw -v -p 30           # Split pane 0 vertically by 30%
 selectp -t 1              # Select pane 1
 splitw -h -p 50           # Split pane 1 vertically by 50%
 selectp -t 0              # Select pane 0
+new-window -n 'guard'     # Create guard window
+new-window -n 'pry'       # Create pry window
+selectw -t 1
+
