@@ -68,10 +68,3 @@ source $ZSH/liquidprompt/liquidprompt
 # =======================================================
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey '^R' history-incremental-search-backward
-
-# =======================================================
-# RVM Integration
-# =======================================================
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
