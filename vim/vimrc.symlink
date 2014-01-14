@@ -192,6 +192,10 @@ vmap <leader>a: :Tabularize /:\zs<cr>
 nmap <leader>a> :Tabularize /=><cr>
 vmap <leader>a> :Tabularize /=><cr>
 
+" Magic HTML to JS converters from Single Page Web Apps Book
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+
 " Bring up NERDTree
 map <leader>nt :NERDTree<cr>
 
