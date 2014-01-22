@@ -196,8 +196,12 @@ vmap <leader>a> :Tabularize /=><cr>
 vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
 vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
 
+" Some nice vimux integration
+map <leader>vp :VimuxPromptCommand<cr>
+map <leader>vl :VimuxRunLastCommand<cr>
+
 " Bring up NERDTree
-map <leader>nt :NERDTree<cr>
+map <leader>nt :NERDTreeToggle<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
