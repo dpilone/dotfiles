@@ -11,8 +11,12 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Powerline
-Bundle 'Lokaltog/vim-powerline'
+" Syntastic - show me when I screw up code syntax
+Bundle 'scrooloose/syntastic'
+" Bufferline - show open buffer names in statusbar
+Bundle 'bling/vim-bufferline'
+" Airline - like powerline, but with more power
+Bundle 'bling/vim-airline'
 " Fuzzy file finding (Control-P)
 Bundle 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
@@ -149,12 +153,23 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Powerline Requirements
+" Airline Configuration
 set nocompatible                    " Disable vi-compatibility
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " Necessary to show Unicode glyphs
-let g:Powerline_symbols = 'fancy'   " We have the custom font setup.
-let g:Powerline_colorscheme = 'solarized256'
+
+" I use the older powerline fonts so we need to define the symbols here.
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_powerline_fonts = 1   " Use custom powerline fonts.
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
@@ -227,8 +242,6 @@ command Thtml set ft=html | execute "%!tidy -q -i -html"
 
 " ==============================================
 " Load any private configuration
-if filereadable(glob("~/.vimrc.private")) 
+if filereadable(glob("~/.vimrc.private"))
     source ~/.vimrc.private
 endif
-
-
