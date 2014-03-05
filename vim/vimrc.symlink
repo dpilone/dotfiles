@@ -69,6 +69,8 @@ Bundle 'skalnik/vim-vroom'
 Bundle 'duff/vim-scratch'
 " Rainbow parenthesis goodness for clojure
 Bundle 'kien/rainbow_parentheses.vim'
+" Markdown support
+Bundle 'plasticboy/vim-markdown'
 
 " =======================================================================
 " Actual vim configuration goes here.
