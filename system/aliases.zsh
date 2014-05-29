@@ -56,6 +56,7 @@ alias rm='nocorrect rm'
 alias rvmnew='rvm --create --ruby-version'
 alias rvmc='rvm current'
 alias rvmempty='rvm --force gemset empty'
+alias be='bundle exec'
 
 # =======================================================
 # Setup to use a fancy top if available
