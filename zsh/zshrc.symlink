@@ -15,7 +15,7 @@ fi
 # =======================================================
 typeset -U config_files
 setopt extendedglob
-config_files=($HOME/.dotfiles/^(zprezto.symlink|oh-my-zsh|zsh-syntax-highlighting)/**/*.zsh)
+config_files=($HOME/.dotfiles/^(zprezto.symlink|oh-my-zsh|zsh-syntax-highlighting|opp)/**/*.zsh)
 
 # -------------------------------------------------------
 # Load the path files
@@ -61,6 +61,12 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 # Load my custom prompt.
 # =======================================================
 source $ZSH/liquidprompt/liquidprompt
+
+# =======================================================
+# Load change inside / surround support
+# =======================================================
+source $ZSH/opp/opp.zsh
+source $ZSH/opp/opp/*.zsh
 
 # =======================================================
 # I use vim and don't want to have to remember where I am.
