@@ -95,6 +95,7 @@ set whichwrap=b,s,h,l,<,>,~,[,]     "moving left and right will wrap around to n
 set backspace=indent,eol,start      "backspace will delete whatever is behind your cursor and wrap
 set visualbell                      "turn off the audible beep
 set modeline                        "let files give hints for syntax and whatnot
+set cursorline                      "highlight the current line
 set showcmd                         "display partial commands
 set showmatch                       "show matching brackets briefly
 set scrolloff=8                     "leave a little context around the current line when scrolling.
