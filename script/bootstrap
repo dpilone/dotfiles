@@ -121,12 +121,29 @@ install_dotfiles
 # If we are on a mac, lets install and setup homebrew
 if [ "$(uname -s)" == "Darwin" ]
 then
-  info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
+  user "Install / update homebrew? [y]es, [n]o"
+  read -n 1 action
+
+  case "$action" in
+    y )
+      homebrew_update=true;;
+    n )
+      homebrew_update=false;;
+    * )
+      ;;
+  esac
+
+  if [ "$homebrew_update" == "true" ]
   then
-    success "dependencies installed"
+    info "installing dependencies"
+    if . bin/dot > /tmp/dotfiles-dot 2>&1
+    then
+      success "dependencies installed"
+    else
+      fail "error installing dependencies"
+    fi
   else
-    fail "error installing dependencies"
+    success "skipped homebrew"
   fi
 fi
 
