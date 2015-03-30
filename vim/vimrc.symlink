@@ -65,6 +65,8 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'vim-scripts/UltiSnips'
 " Awesome character alignment
 Plugin 'godlygeek/tabular'
+" Vim + tmux navigation.  Also sets up the pane navigation bindings
+Plugin 'christoomey/vim-tmux-navigator'
 " Vim + tmux integration
 Plugin 'benmills/vimux'
 " Applescript syntax highlighting.
@@ -127,13 +129,6 @@ if has('gui_running')
   "set noantialias                  "turn off antialiasing - it makes things look really blurry.
   set guifont=Inconsolata\ XL:h12,Inconsolata:h12,Monaco:h12 "set fonts for gui vim
 endif
-
-" Add window switching support using Control-hjklq
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-H> <C-W>h
-nnoremap <C-L> <C-W>l
-nnoremap <C-Q> <C-W>q
 
 " Make jk behave like you'd expect with wrapped lines
 nnoremap j gj
