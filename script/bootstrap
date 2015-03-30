@@ -164,7 +164,15 @@ else
 fi
 
 info "updating vim bundles"
-if vim +BundleInstall! +BundleClean! +qall > /tmp/vundle-update 2>&1
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]
+then
+  if [ ! /usr/bin/git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /tmp/vundle-checkout 2>&1 ]
+  then
+    fail "error checking out Vundle for Vim plugins"
+  fi
+fi
+
+if vim +PluginInstall! +PluginClean! +qall > /tmp/vundle-update 2>&1
 then
   success "vim bundles updated"
 else
