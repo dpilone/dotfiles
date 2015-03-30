@@ -7,70 +7,79 @@
 set nocompatible                    " required for Vundle
 filetype off                        " required for Vundle, enabled later.
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 " Syntastic - show me when I screw up code syntax
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Bufferline - show open buffer names in statusbar
-Bundle 'bling/vim-bufferline'
+Plugin 'bling/vim-bufferline'
 " Airline - like powerline, but with more power
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " Fuzzy file finding (Control-P)
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
-Bundle 'docunext/closetag.vim'
+Plugin 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 " Multiple cursor support a-la sublime
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 " Multifile grep search and replace support
-Bundle 'vim-scripts/EasyGrep'
+Plugin 'vim-scripts/EasyGrep'
 " Ninja Ruby support
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 " Judo Rails support
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 " Matchit to let % match method start ends, tags, etc.
-Bundle 'vim-scripts/matchit.zip'
-" Bundler support
-Bundle 'tpope/vim-bundler'
+Plugin 'vim-scripts/matchit.zip'
+" Pluginr support
+Plugin 'tpope/vim-bundler'
 " Cucumber support
-Bundle 'tpope/vim-cucumber'
+Plugin 'tpope/vim-cucumber'
 " Add appropriate keywords after if, do, etc.
-Bundle 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 " Comment / uncomment
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 " Git support in vim
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Evernote support - Note you'll need to install this: https://pypi.python.org/pypi/Markdown
-Bundle 'kakkyz81/evervim'
+Plugin 'kakkyz81/evervim'
 " Tree browsing goodness
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Add surround support to surround text with stuff.
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
+" Open up repeate (.) for plugins
+Plugin 'tpope/vim-repeat'
 " Docuwiki editing support
-Bundle 'nblock/vim-dokuwiki'
+Plugin 'nblock/vim-dokuwiki'
 " Clojure dynamic evaluation support
-Bundle 'tpope/vim-fireplace'
-" Clojure syntax highlighting
-Bundle 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+" S-Expression Support for Clojure
+Plugin 'guns/vim-sexp'
+" Human bindings for S-Expression
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 " Textmate Snippet Support
-Bundle 'vim-scripts/UltiSnips'
+Plugin 'vim-scripts/UltiSnips'
 " Awesome character alignment
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 " Vim + tmux integration
-Bundle "benmills/vimux"
+Plugin 'benmills/vimux'
 " Applescript syntax highlighting.
-Bundle "vim-scripts/applescript.vim"
+Plugin 'vim-scripts/applescript.vim'
 " Run ruby tests through vimux
-Bundle 'skalnik/vim-vroom'
+Plugin 'skalnik/vim-vroom'
 " Support a scratch buffer
-Bundle 'duff/vim-scratch'
+Plugin 'duff/vim-scratch'
 " Rainbow parenthesis goodness for clojure
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 " Markdown support
-Bundle 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
+" Leiningen Support
+Plugin 'tpope/vim-leiningen.git'
+
+call vundle#end()
+
 
 " =======================================================================
 " Actual vim configuration goes here.
