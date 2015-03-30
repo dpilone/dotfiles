@@ -55,6 +55,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'nblock/vim-dokuwiki'
 " Clojure dynamic evaluation support
 Plugin 'tpope/vim-fireplace'
+" Clojure syntax highlighting
+Plugin 'guns/vim-clojure-static'
 " S-Expression Support for Clojure
 Plugin 'guns/vim-sexp'
 " Human bindings for S-Expression
