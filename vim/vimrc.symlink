@@ -98,6 +98,7 @@ set background=dark                 "assume we're on a dark background for solar
 let g:solarized_termcolors=256      "assume we're on a dark background for colors
 
 " General Preferences
+set clipboard=unnamed               "use system clipboard by default
 set incsearch                       "search as you type
 set hlsearch                        "highlight the search
 set ignorecase                      "ignore case...
