@@ -66,7 +66,9 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 " Clojure linting with Eastwood
 Plugin 'venantius/vim-eastwood'
 " Textmate Snippet Support
-Plugin 'vim-scripts/UltiSnips'
+Plugin 'SirVer/ultisnips'
+" Actual snippets
+Plugin 'honza/vim-snippets'
 " Awesome character alignment
 Plugin 'godlygeek/tabular'
 " Vim + tmux navigation.  Also sets up the pane navigation bindings
