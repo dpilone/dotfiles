@@ -63,6 +63,8 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-sexp'
 " Human bindings for S-Expression
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+" Clojure linting with Eastwood
+Plugin 'venantius/vim-eastwood'
 " Textmate Snippet Support
 Plugin 'vim-scripts/UltiSnips'
 " Awesome character alignment
