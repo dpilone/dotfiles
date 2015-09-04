@@ -83,6 +83,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'plasticboy/vim-markdown'
 " Leiningen Support
 Plugin 'tpope/vim-leiningen.git'
+" Tagbar class outline viewer
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 
