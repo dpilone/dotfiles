@@ -10,3 +10,6 @@
 [submodule "opp"]
 	path = opp
 	url = https://github.com/hchbaw/opp.zsh.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git
