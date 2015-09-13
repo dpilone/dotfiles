@@ -53,8 +53,10 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
-# set first window to index 1 (not 0) to map more to the keyboard layout...
+# set first window to index 1 (not 0) to map more closely to the keyboard layout
+# then set the pane-base-index so tmuxinator knows what's going on
 set -g base-index 1
+set-window-option -g pane-base-index 1
 
 # color scheme (styled as vim-powerline)
 set -g status-left-length 52
