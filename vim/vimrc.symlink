@@ -195,18 +195,8 @@ set nocompatible                    " Disable vi-compatibility
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " Necessary to show Unicode glyphs
 
-" I use the older powerline fonts so we need to define the symbols here.
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_powerline_fonts = 1   " Use custom powerline fonts.
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
+let g:airline_powerline_fonts = 1   " Use powerline fonts. I prefer 13pt Fira Mono Medium
+let g:airline_theme='base16'
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1

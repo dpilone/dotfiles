@@ -147,20 +147,20 @@ then
   fi
 fi
 
-# If we are on a mac, install custom fonts.
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing fonts"
-  cp fonts/* ~/Library/Fonts
-  success "fonts installed"
-fi
-
 info "updating submodules"
 if /usr/bin/git submodule update --init --recursive > /tmp/submodule-update 2>&1
 then
   success "submodules updated"
 else
   fail "error updating submodules"
+fi
+
+# If we are on a mac, install custom fonts.
+if [ "$(uname -s)" == "Darwin" ]
+then
+  info "installing fonts"
+  ./fonts/install.sh
+  success "fonts installed"
 fi
 
 info "updating vim bundles"
