@@ -4,11 +4,6 @@ set -g bell-action any
 # Default termtype. If the rcfile sets $TERM, that overrides this value.
 set -g default-terminal screen-256color
 
-# Using the reattach-to-user-namespace binary lets us use pbpaste and pbcopy
-# inside tmux on OSX.  Otherwise we don't have access to the pasteboard
-# inside a tmux instance.
-set-option -g default-command "reattach-to-user-namespace -l $SHELL"
-
 # Keep your finger on ctrl, or don't
 bind-key ^D detach-client
 
@@ -43,7 +38,9 @@ bind-key L resize-pane -R
 # Note that to get command mode you need to hit ESC twice...
 set -g status-keys vi
 
-# Use vi keybindings in copy and choice modes
+# Use vi keybindings in copy and choice modes. Using the reattach-to-user-namespace
+# binary lets us use pbpaste and pbcopy inside tmux on OSX.  Otherwise we don't
+# have access to the pasteboard inside a tmux instance.
 setw -g mode-keys vi
 bind-key -t vi-copy v begin-selection
 bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
@@ -75,10 +72,7 @@ set -g window-status-format "#[fg=colour235,bg=colour252,bold] #I #W "
 #set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=black,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
 set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=black,bg=colour39,noreverse,bold] #I: #W #[fg=colour39,bg=colour234,nobold]⮀"
 
-# Patch for OS X pbpaste and pbcopy under tmux.
-# set-option -g default-command "reattach-to-user-namespace -l zsh"
-
-# Screen like binding
+# Screen like binding and get out of the way of vi's control-b
 unbind C-b
 set -g prefix C-a
 bind-key a send-prefix
@@ -92,4 +86,3 @@ set -sg escape-time 0
 
 # Bigger history
 set -g history-limit 10000
-#
