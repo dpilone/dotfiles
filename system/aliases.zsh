@@ -106,7 +106,7 @@ fi
 # =======================================================
 if [[ "$(uname -s)" == "Darwin" ]]
 then
-  alias vi="mvim -v"
+  alias vim="mvim -v"
   alias ge='mvim --remote-tab-silent'
 fi
 
