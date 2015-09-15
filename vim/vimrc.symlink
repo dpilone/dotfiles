@@ -89,6 +89,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-leiningen.git'
 " Tagbar class outline viewer
 Plugin 'majutsushi/tagbar'
+" Tab for all your completion needs
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 
