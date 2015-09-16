@@ -91,6 +91,10 @@ Plugin 'tpope/vim-leiningen.git'
 Plugin 'majutsushi/tagbar'
 " Tab for all your completion needs
 Plugin 'ervandew/supertab'
+" Needed for vim-easytags
+Plugin 'xolox/vim-misc'
+" Automated ctags support
+Plugin 'xolox/vim-easytags'
 
 call vundle#end()
 
@@ -199,6 +203,13 @@ set encoding=utf-8                  " Necessary to show Unicode glyphs
 
 let g:airline_powerline_fonts = 1   " Use powerline fonts. I prefer 12pt Fira Mono Medium for Powerline
 let g:airline_theme='papercolor'
+
+" Easytag configuration
+:set tags=./tags;
+:let g:easytags_dynamic_files = 1
+
+" Supertab Config
+let g:SuperTabDefaultCompletionType = "context"
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
