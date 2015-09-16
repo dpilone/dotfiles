@@ -15,6 +15,7 @@
         # Alias "git svn-diff" to list the commits on this branch that haven't been pushed to subversion
         server-outgoing = log remotes/origin/master..
         server-incoming = log ..remotes/origin/master
+        undo-commit = reset --hard HEAD^
 
 [format]
         # Format for log messages used by "git log".  Puts everything on one line with nicely aligned columns.
