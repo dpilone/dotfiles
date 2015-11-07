@@ -95,6 +95,9 @@ Plugin 'ervandew/supertab'
 Plugin 'xolox/vim-misc'
 " Automated ctags support
 Plugin 'xolox/vim-easytags'
+" Support to send clojure to a repl
+Plugin 'jpalardy/vim-slime'
+
 
 call vundle#end()
 
@@ -210,6 +213,9 @@ let g:airline_theme='papercolor'
 
 " Supertab Config
 let g:SuperTabDefaultCompletionType = "context"
+
+"Vim-Slime Config for tmux
+let g:slime_target = "tmux"
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
