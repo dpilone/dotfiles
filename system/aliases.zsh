@@ -62,7 +62,7 @@ alias be='bundle exec'
 # Setup to use a fancy top if available
 # =======================================================
 if (( $+commands[htop] )); then
-  alias top=htop
+  alias top='htop'
 else
   alias topc='top -o cpu'
   alias topm='top -o vsize'
@@ -106,6 +106,11 @@ fi
 # =======================================================
 if [[ "$(uname -s)" == "Darwin" ]]
 then
+
+if (( $+commands[htop] )); then
+  alias top='sudo htop'
+fi
+
   alias vim="mvim -v"
   alias ge='mvim --remote-tab-silent'
 fi
