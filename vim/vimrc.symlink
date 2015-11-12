@@ -97,6 +97,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 " Support to send clojure to a repl
 Plugin 'jpalardy/vim-slime'
+" Fish shell syntax support
+Plugin 'dag/vim-fish'
 
 
 call vundle#end()
