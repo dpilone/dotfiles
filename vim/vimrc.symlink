@@ -7,6 +7,12 @@
 set nocompatible                    " required for Vundle
 filetype off                        " required for Vundle, enabled later.
 
+" Some vim plugins (reasonably) assume a POSIX shell, which fish isn't.
+" If we're running vim from fish, tell vim to use bash instead.
+if &shell =~# 'fish$'
+    set shell=bash
+endif
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -218,6 +224,10 @@ let g:SuperTabDefaultCompletionType = "context"
 
 "Vim-Slime Config for tmux
 let g:slime_target = "tmux"
+
+" Fish syntax configuration
+autocmd FileType fish compiler fish
+autocmd FileType fish setlocal textwidth=79
 
 " Restrict closetag to certain filetypes
 autocmd FileType html,htmldjango,jinjahtml,mako let b:closetag_html_style=1
