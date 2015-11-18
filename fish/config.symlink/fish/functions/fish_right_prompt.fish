@@ -14,5 +14,20 @@ function fish_right_prompt
      printf (red)":"(gray)"$HOSTNAME "(normal)
    end
 
+   if set -q __fish_vi_mode
+     switch $fish_bind_mode
+       case default
+         set_color --bold --background red white
+         echo '[N]'
+       case insert
+         set_color --bold --background green white
+         echo '[I]'
+       case visual
+         set_color --bold --background magenta white
+         echo '[V]'
+     end
+     set_color normal
+   end
+
    printf [(gray)(date +%H(white):(gray)%M(white):(gray)%S)(normal)]
 end
