@@ -105,6 +105,8 @@ Plugin 'xolox/vim-easytags'
 Plugin 'jpalardy/vim-slime'
 " Fish shell syntax support
 Plugin 'dag/vim-fish'
+" So many colors...
+Plugin 'flazz/vim-colorschemes'
 
 
 call vundle#end()
@@ -116,7 +118,7 @@ call vundle#end()
 
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-colorscheme solarized
+colorscheme molokai
 set background=dark                 "assume we're on a dark background for solarized colors
 let g:solarized_termcolors=256      "assume we're on a dark background for colors
 
