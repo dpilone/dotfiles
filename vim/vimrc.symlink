@@ -107,6 +107,8 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'dag/vim-fish'
 " So many colors...
 Plugin 'flazz/vim-colorschemes'
+" TypeScript syntax support
+Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()
