@@ -120,9 +120,9 @@ call vundle#end()
 
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-colorscheme molokai
-set background=dark                 "assume we're on a dark background for solarized colors
-let g:solarized_termcolors=256      "assume we're on a dark background for colors
+"set background=dark                 "assume we're on a dark background for solarized colors
+"let g:solarized_termcolors=256      "assume we're on a dark background for colors
+colorscheme hybrid
 
 " General Preferences
 set clipboard=unnamed               "use system clipboard by default
