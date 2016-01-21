@@ -109,6 +109,12 @@ Plugin 'dag/vim-fish'
 Plugin 'flazz/vim-colorschemes'
 " TypeScript syntax support
 Plugin 'leafgarland/typescript-vim'
+" Super JavaScript syntax support
+Plugin 'pangloss/vim-javascript'
+" NodeJS support in VIM
+Plugin 'moll/vim-node'
+" Show indentation prettily
+Plugin 'Yggdroot/indentLine'
 
 
 call vundle#end()
@@ -163,6 +169,11 @@ endif
 " Make jk behave like you'd expect with wrapped lines
 nnoremap j gj
 nnoremap k gk
+
+" indentLine configuration
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char = '│'
 
 " Customize the rainbow_parens to remove black since I use a black background
 let g:rbpt_colorpairs = [
@@ -312,6 +323,10 @@ command Thtml set ft=html | execute "%!tidy -q -i -html"
 
 " Don't fold by default in vim-markdown
 let g:vim_markdown_folding_disabled=1
+
+" vim-javascript configuration
+let g:javascript_enable_domhtmlcss=1
+let g:javascript_fold=1
 
 " ==============================================
 " Load any private configuration
