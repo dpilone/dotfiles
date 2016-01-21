@@ -13,3 +13,6 @@ brew update
 
 # Install homebrew packages
 $HOME/.dotfiles/homebrew/install.sh 2>&1
+
+# Install nodejs packages
+$HOME/.dotfiles/nodejs/install.sh 2>&1
