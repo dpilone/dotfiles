@@ -17,6 +17,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+" Super duper completion with YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 " Syntastic - show me when I screw up code syntax
 Plugin 'scrooloose/syntastic'
 " Bufferline - show open buffer names in statusbar
@@ -95,8 +97,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-leiningen.git'
 " Tagbar class outline viewer
 Plugin 'majutsushi/tagbar'
-" Tab for all your completion needs
-Plugin 'ervandew/supertab'
 " Needed for vim-easytags
 Plugin 'xolox/vim-misc'
 " Automated ctags support
@@ -233,9 +233,6 @@ let g:airline_theme='papercolor'
 " Easytag configuration
 :set tags=./.tags;
 :let g:easytags_dynamic_files = 1
-
-" Supertab Config
-let g:SuperTabDefaultCompletionType = "context"
 
 "Vim-Slime Config for tmux
 let g:slime_target = "tmux"
