@@ -24,7 +24,8 @@ Plugin 'scrooloose/syntastic'
 " Bufferline - show open buffer names in statusbar
 Plugin 'bling/vim-bufferline'
 " Airline - like powerline, but with more power
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Fuzzy file finding (Control-P)
 Plugin 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
@@ -111,6 +112,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'leafgarland/typescript-vim'
 " Super JavaScript syntax support
 Plugin 'pangloss/vim-javascript'
+"Plugin 'othree/yajs.vim', { 'for': 'javascript' }
+"Plugin 'mxw/vim-jsx'
 " NodeJS support in VIM
 Plugin 'moll/vim-node'
 " Show indentation prettily
@@ -128,7 +131,6 @@ syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
 "set background=dark                 "assume we're on a dark background for solarized colors
 "let g:solarized_termcolors=256      "assume we're on a dark background for colors
-colorscheme hybrid
 
 " General Preferences
 set clipboard=unnamed               "use system clipboard by default
@@ -172,7 +174,8 @@ nnoremap k gk
 
 " indentLine configuration
 let g:indentLine_color_term = 239
-let g:indentLine_color_gui = '#A4E57E'
+"let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_color_gui = '#333333'
 let g:indentLine_char = '│'
 
 " Customize the rainbow_parens to remove black since I use a black background
@@ -229,6 +232,7 @@ set encoding=utf-8                  " Necessary to show Unicode glyphs
 
 let g:airline_powerline_fonts = 1   " Use powerline fonts. I prefer 12pt Fira Mono Medium for Powerline
 let g:airline_theme='papercolor'
+colorscheme CandyPaper
 
 " Easytag configuration
 :set tags=./.tags;
@@ -324,6 +328,12 @@ let g:vim_markdown_folding_disabled=1
 " vim-javascript configuration
 let g:javascript_enable_domhtmlcss=1
 let g:javascript_fold=1
+
+" vim-syntastic configuration
+let g:syntastic_javascript_checkers = ['eslint']
+
+" vim-jsx configuration
+"let g:jsx_ext_required = 0 " Support JSX in JS files, not just JSX files.
 
 " ==============================================
 " Load any private configuration
