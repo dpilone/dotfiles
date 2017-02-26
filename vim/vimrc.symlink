@@ -52,8 +52,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 " Git support in vim
 Plugin 'tpope/vim-fugitive'
-" Evernote support through geeknote - You'll need to install geeknote separately
-Plugin 'neilagabriel/vim-geeknote'
 " Tree browsing goodness
 Plugin 'scrooloose/nerdtree'
 " Add surround support to surround text with stuff.
@@ -314,6 +312,12 @@ map <leader>dw :set ft=dokuwiki<cr>
 
 " Shortcut for Gstatus
 map <leader>gs :Gstatus<cr>
+
+" iTerm2 Touchbar support
+autocmd VimEnter * silent !echo -ne "\033]1337;PushKeyLabels\a"
+autocmd VimEnter * silent !echo -ne "\033]1337;SetKeyLabel=F1=Git Status\a"
+autocmd VimEnter * map <F1> :Gstatus<CR>
+autocmd VimLeave * silent !echo -ne "\033]1337;PopKeyLabels\a"
 
 " Setup some commands for formatting HTML and XML
 command Txml set ft=xml | execute "%!tidy -q -i -xml"
