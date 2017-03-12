@@ -166,6 +166,11 @@ if has('gui_running')
   set guifont=Fira\ Mono\ Medium\ for\ Powerline:h12,Monaco:h12 "set fonts for gui vim
 endif
 
+" Neovim color support
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 " Make jk behave like you'd expect with wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -219,7 +224,7 @@ filetype indent on
 filetype plugin on
 
 " UltiSnip bindings
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
