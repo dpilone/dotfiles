@@ -254,3 +254,6 @@ bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 # Get tmux out of the way of vi's control-b which I use all the time.
 unbind C-b
 set -g prefix C-a
+
+# Fix copy and paste on Macs
+if -b 'command -v reattach-to-user-namespace > /dev/null 2>&1' 'bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"'
