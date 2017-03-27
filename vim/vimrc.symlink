@@ -268,14 +268,6 @@ au Syntax * RainbowParenthesesLoadBraces
 " Map . to jump back to where editing started after repeating the last command.
 nmap . .`[
 
-" vim-geeknote keybindings
-map <leader>gnt :Geeknote<cr>
-map <leader>gnc :GeeknoteCreateNote
-" Enable markdown support.  Note that this can wreak havoc on some
-" notes, so use wisely.
-map <leader>gnm let g:GeeknoteFormat="markdown"<cr>
-
-
 " Some Ctrl-P goodness from http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CtrlP %%<cr>
