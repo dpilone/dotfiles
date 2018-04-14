@@ -8,4 +8,4 @@ then
   exit
 fi
 
-npm install -g jshint
+npm install -g jshint tldr
