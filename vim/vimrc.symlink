@@ -325,6 +325,9 @@ command Thtml set ft=html | execute "%!tidy -q -i -html"
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 
+" Convenient YouCompleteMe Bindings
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " Don't fold by default in vim-markdown
 let g:vim_markdown_folding_disabled=1
 
