@@ -237,7 +237,7 @@ set encoding=utf-8                  " Necessary to show Unicode glyphs
 
 let g:airline_powerline_fonts = 1   " Use powerline fonts. I prefer 12pt Fira Mono Medium for Powerline
 let g:airline_theme='papercolor'
-colorscheme CandyPaper
+colorscheme molokai
 
 " Easytag configuration
 :set tags=./.tags;
