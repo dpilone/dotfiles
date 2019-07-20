@@ -1,3 +1,10 @@
+# These don't seem to be set properly when SShing into an OSX box
+# so I'm forcing them here. These being wrong breaks tmux amongst other
+# things.
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # =======================================================
 # RVM Integration
 # =======================================================
