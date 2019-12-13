@@ -13,3 +13,6 @@
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "tmux-resurrect"]
+	path = tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
