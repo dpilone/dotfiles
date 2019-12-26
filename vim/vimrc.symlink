@@ -29,7 +29,8 @@ Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Fuzzy file finding (Control-P)
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
 Plugin 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
@@ -112,6 +113,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'leafgarland/typescript-vim'
 " Super JavaScript syntax support
 Plugin 'pangloss/vim-javascript'
+" Fancy DevIcons for VIM
+Plugin 'ryanoasis/vim-devicons'
 "Plugin 'othree/yajs.vim', { 'for': 'javascript' }
 "Plugin 'mxw/vim-jsx'
 " NodeJS support in VIM
