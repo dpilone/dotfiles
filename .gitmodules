@@ -16,3 +16,6 @@
 [submodule "tmux-resurrect"]
 	path = tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "sessel"]
+	path = sessel
+	url = https://github.com/dpilone/sessel
