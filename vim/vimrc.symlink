@@ -77,6 +77,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ryanoasis/vim-devicons'
 " Show indentation prettily
 Plugin 'Yggdroot/indentLine'
+" Rainbow parenthesis goodness for clojure
+Plugin 'kien/rainbow_parentheses.vim'
 
 " ==============================================================
 " === Javascript support ===
@@ -100,37 +102,35 @@ Plugin 'vim-scripts/applescript.vim'
 " === Clojure support ===
 " ==============================================================
 " Clojure dynamic evaluation support
-Plugin 'tpope/vim-fireplace'
+"Plugin 'tpope/vim-fireplace'
 " Clojure syntax highlighting
-Plugin 'guns/vim-clojure-static'
+"Plugin 'guns/vim-clojure-static'
 " Enhanced Clojure highlighting
-Plugin 'guns/vim-clojure-highlight'
+"Plugin 'guns/vim-clojure-highlight'
 " S-Expression Support for Clojure
-Plugin 'guns/vim-sexp'
+"Plugin 'guns/vim-sexp'
 " Human bindings for S-Expression
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 " Clojure linting with Eastwood
-Plugin 'venantius/vim-eastwood'
+"Plugin 'venantius/vim-eastwood'
 " Support to send clojure to a repl
-Plugin 'jpalardy/vim-slime'
+"Plugin 'jpalardy/vim-slime'
 " Leiningen Support
-Plugin 'tpope/vim-leiningen.git'
-" Rainbow parenthesis goodness for clojure
-Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'tpope/vim-leiningen.git'
 
 " ==============================================================
 " === Ruby support ===
 " ==============================================================
 " Ninja Ruby support
-Plugin 'vim-ruby/vim-ruby'
+"Plugin 'vim-ruby/vim-ruby'
 " Judo Rails support
-Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-rails'
 " Pluginr support
-Plugin 'tpope/vim-bundler'
+"Plugin 'tpope/vim-bundler'
 " Cucumber support
-Plugin 'tpope/vim-cucumber'
+"Plugin 'tpope/vim-cucumber'
 " Run ruby tests through vimux
-Plugin 'skalnik/vim-vroom'
+"Plugin 'skalnik/vim-vroom'
 
 
 call vundle#end()
