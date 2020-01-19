@@ -17,6 +17,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+" ==============================================================
+" === Vim Lifestyle Plugins ===
+" ==============================================================
 " Super duper completion with YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 " Syntastic - show me when I screw up code syntax
@@ -30,7 +33,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Fuzzy file finding (Control-P)
 Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'kien/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
 Plugin 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
@@ -39,16 +41,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 " Multifile grep search and replace support
 Plugin 'vim-scripts/EasyGrep'
-" Ninja Ruby support
-Plugin 'vim-ruby/vim-ruby'
-" Judo Rails support
-Plugin 'tpope/vim-rails'
 " Matchit to let % match method start ends, tags, etc.
 Plugin 'vim-scripts/matchit.zip'
-" Pluginr support
-Plugin 'tpope/vim-bundler'
-" Cucumber support
-Plugin 'tpope/vim-cucumber'
 " Add appropriate keywords after if, do, etc.
 Plugin 'tpope/vim-endwise'
 " Comment / uncomment
@@ -61,8 +55,50 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 " Open up repeate (.) for plugins
 Plugin 'tpope/vim-repeat'
-" Docuwiki editing support
-Plugin 'nblock/vim-dokuwiki'
+" Textmate Snippet Support
+Plugin 'SirVer/ultisnips'
+" Actual snippets
+Plugin 'honza/vim-snippets'
+" Awesome character alignment
+Plugin 'godlygeek/tabular'
+" Vim + tmux navigation.  Also sets up the pane navigation bindings
+Plugin 'christoomey/vim-tmux-navigator'
+" Vim + tmux integration
+Plugin 'benmills/vimux'
+" Support a scratch buffer
+Plugin 'duff/vim-scratch'
+" Needed for vim-easytags
+Plugin 'xolox/vim-misc'
+" Automated ctags support
+Plugin 'xolox/vim-easytags'
+" So many colors...
+Plugin 'flazz/vim-colorschemes'
+" Fancy DevIcons for VIM
+Plugin 'ryanoasis/vim-devicons'
+" Show indentation prettily
+Plugin 'Yggdroot/indentLine'
+
+" ==============================================================
+" === Javascript support ===
+" ==============================================================
+" TypeScript syntax support
+Plugin 'leafgarland/typescript-vim'
+" Super JavaScript syntax support
+Plugin 'pangloss/vim-javascript'
+" NodeJS support in VIM
+Plugin 'moll/vim-node'
+
+" ==============================================================
+" === Misc support ===
+" ==============================================================
+" Markdown support
+Plugin 'plasticboy/vim-markdown'
+" Applescript syntax highlighting.
+Plugin 'vim-scripts/applescript.vim'
+
+" ==============================================================
+" === Clojure support ===
+" ==============================================================
 " Clojure dynamic evaluation support
 Plugin 'tpope/vim-fireplace'
 " Clojure syntax highlighting
@@ -75,52 +111,26 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 " Clojure linting with Eastwood
 Plugin 'venantius/vim-eastwood'
-" Textmate Snippet Support
-Plugin 'SirVer/ultisnips'
-" Actual snippets
-Plugin 'honza/vim-snippets'
-" Awesome character alignment
-Plugin 'godlygeek/tabular'
-" Vim + tmux navigation.  Also sets up the pane navigation bindings
-Plugin 'christoomey/vim-tmux-navigator'
-" Vim + tmux integration
-Plugin 'benmills/vimux'
-" Applescript syntax highlighting.
-Plugin 'vim-scripts/applescript.vim'
-" Run ruby tests through vimux
-Plugin 'skalnik/vim-vroom'
-" Support a scratch buffer
-Plugin 'duff/vim-scratch'
-" Rainbow parenthesis goodness for clojure
-Plugin 'kien/rainbow_parentheses.vim'
-" Markdown support
-Plugin 'plasticboy/vim-markdown'
-" Leiningen Support
-Plugin 'tpope/vim-leiningen.git'
-" Tagbar class outline viewer
-Plugin 'majutsushi/tagbar'
-" Needed for vim-easytags
-Plugin 'xolox/vim-misc'
-" Automated ctags support
-Plugin 'xolox/vim-easytags'
 " Support to send clojure to a repl
 Plugin 'jpalardy/vim-slime'
-" Fish shell syntax support
-Plugin 'dag/vim-fish'
-" So many colors...
-Plugin 'flazz/vim-colorschemes'
-" TypeScript syntax support
-Plugin 'leafgarland/typescript-vim'
-" Super JavaScript syntax support
-Plugin 'pangloss/vim-javascript'
-" Fancy DevIcons for VIM
-Plugin 'ryanoasis/vim-devicons'
-"Plugin 'othree/yajs.vim', { 'for': 'javascript' }
-"Plugin 'mxw/vim-jsx'
-" NodeJS support in VIM
-Plugin 'moll/vim-node'
-" Show indentation prettily
-Plugin 'Yggdroot/indentLine'
+" Leiningen Support
+Plugin 'tpope/vim-leiningen.git'
+" Rainbow parenthesis goodness for clojure
+Plugin 'kien/rainbow_parentheses.vim'
+
+" ==============================================================
+" === Ruby support ===
+" ==============================================================
+" Ninja Ruby support
+Plugin 'vim-ruby/vim-ruby'
+" Judo Rails support
+Plugin 'tpope/vim-rails'
+" Pluginr support
+Plugin 'tpope/vim-bundler'
+" Cucumber support
+Plugin 'tpope/vim-cucumber'
+" Run ruby tests through vimux
+Plugin 'skalnik/vim-vroom'
 
 
 call vundle#end()
@@ -158,6 +168,7 @@ set splitright                      "put the new window on the right when vertic
 set splitbelow                      "put the new window on the bottom when horizontally splitting
 set showcmd                         "show partial commands in the status bar
 set nobackup                        "don't create backup files
+set noswapfile                      "don't create swap files
 set number                          "show line numbers
 set list                            "show special characters
 set listchars=tab:»\ ,trail:·,extends:▸ "set custom tab, wrap, and end of line characters
