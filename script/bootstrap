@@ -163,26 +163,13 @@ then
   success "fonts installed"
 fi
 
-info "updating vim bundles"
-if [ ! -d "$HOME/.vim/bundle" ]
+info "updating vim plugins"
+if vim +PlugInstall! +PlugClean! +qall > /tmp/vim-plug-update 2>&1
 then
-  mkdir -p ~/.vim/bundle
-fi
-
-if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]
-then
-  if [ ! /usr/bin/git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /tmp/vundle-checkout 2>&1 ]
-  then
-    fail "error checking out Vundle for Vim plugins"
-  fi
-fi
-
-if vim +PluginInstall! +PluginClean! +qall > /tmp/vundle-update 2>&1
-then
-  $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer --tern-completer
-  success "vim bundles updated"
+  $HOME/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer
+  success "vim plugins updated"
 else
-  fail "error updating vim bundles"
+  fail "error updating vim plugins"
 fi
 
 echo ''

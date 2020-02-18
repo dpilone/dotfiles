@@ -1,11 +1,8 @@
-" =======================================================================
-" Vundle setup and initialization. This needs
-" to be done before any configuration so all
+" ==============================================================
+" === Plugins come first ===
+" ==============================================================
 
-" plugins are loaded.
-
-set nocompatible                    " required for Vundle
-filetype off                        " required for Vundle, enabled later.
+set nocompatible                    " We live in the future.
 
 " Some vim plugins (reasonably) assume a POSIX shell, which fish isn't.
 " If we're running vim from fish, tell vim to use bash instead.
@@ -13,127 +10,132 @@ if &shell =~# 'fish$'
     set shell=bash
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+" Automatically fetch vim-plug if we don't have it.
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
 
 " ==============================================================
 " === Vim Lifestyle Plugins ===
 " ==============================================================
 " Super duper completion with YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " Syntastic - show me when I screw up code syntax
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Syntastic support for local eslint
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 " Bufferline - show open buffer names in statusbar
-Plugin 'bling/vim-bufferline'
+Plug 'bling/vim-bufferline'
 " Airline - like powerline, but with more power
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Fuzzy file finding (Control-P)
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " Auto tag closing for HTML, XML, etc.
-Plugin 'docunext/closetag.vim'
+Plug 'docunext/closetag.vim'
 " Jump around documents like it's your J.O.B.
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 " Multiple cursor support a-la sublime
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " Multifile grep search and replace support
-Plugin 'vim-scripts/EasyGrep'
+Plug 'vim-scripts/EasyGrep'
 " Matchit to let % match method start ends, tags, etc.
-Plugin 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 " Add appropriate keywords after if, do, etc.
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " Comment / uncomment
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Git support in vim
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Tree browsing goodness
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Add surround support to surround text with stuff.
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Open up repeate (.) for plugins
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Textmate Snippet Support
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Actual snippets
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " Awesome character alignment
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " Vim + tmux navigation.  Also sets up the pane navigation bindings
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 " Vim + tmux integration
-Plugin 'benmills/vimux'
+Plug 'benmills/vimux'
 " Support a scratch buffer
-Plugin 'duff/vim-scratch'
+Plug 'duff/vim-scratch'
 " Needed for vim-easytags
-Plugin 'xolox/vim-misc'
+Plug 'xolox/vim-misc'
 " Automated ctags support
-Plugin 'xolox/vim-easytags'
+Plug 'xolox/vim-easytags'
 " So many colors...
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 " Fancy DevIcons for VIM
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 " Show indentation prettily
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Rainbow parenthesis goodness for clojure
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 " ==============================================================
 " === Javascript support ===
 " ==============================================================
 " TypeScript syntax support
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 " Super JavaScript syntax support
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 " NodeJS support in VIM
-Plugin 'moll/vim-node'
+Plug 'moll/vim-node'
 
 " ==============================================================
 " === Misc support ===
 " ==============================================================
 " Markdown support
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Applescript syntax highlighting.
-Plugin 'vim-scripts/applescript.vim'
+Plug 'vim-scripts/applescript.vim'
 
 " ==============================================================
 " === Clojure support ===
 " ==============================================================
 " Clojure dynamic evaluation support
-"Plugin 'tpope/vim-fireplace'
+"Plug 'tpope/vim-fireplace'
 " Clojure syntax highlighting
-"Plugin 'guns/vim-clojure-static'
+"Plug 'guns/vim-clojure-static'
 " Enhanced Clojure highlighting
-"Plugin 'guns/vim-clojure-highlight'
+"Plug 'guns/vim-clojure-highlight'
 " S-Expression Support for Clojure
-"Plugin 'guns/vim-sexp'
+"Plug 'guns/vim-sexp'
 " Human bindings for S-Expression
-"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+"Plug 'tpope/vim-sexp-mappings-for-regular-people'
 " Clojure linting with Eastwood
-"Plugin 'venantius/vim-eastwood'
+"Plug 'venantius/vim-eastwood'
 " Support to send clojure to a repl
-"Plugin 'jpalardy/vim-slime'
+"Plug 'jpalardy/vim-slime'
 " Leiningen Support
-"Plugin 'tpope/vim-leiningen.git'
+"Plug 'tpope/vim-leiningen.git'
 
 " ==============================================================
 " === Ruby support ===
 " ==============================================================
 " Ninja Ruby support
-"Plugin 'vim-ruby/vim-ruby'
+"Plug 'vim-ruby/vim-ruby'
 " Judo Rails support
-"Plugin 'tpope/vim-rails'
-" Pluginr support
-"Plugin 'tpope/vim-bundler'
+"Plug 'tpope/vim-rails'
+" Plugr support
+"Plug 'tpope/vim-bundler'
 " Cucumber support
-"Plugin 'tpope/vim-cucumber'
+"Plug 'tpope/vim-cucumber'
 " Run ruby tests through vimux
-"Plugin 'skalnik/vim-vroom'
+"Plug 'skalnik/vim-vroom'
 
 
-call vundle#end()
+call plug#end()
 
 
 " =======================================================================
@@ -234,7 +236,7 @@ set smarttab                        "backspace to remove space-indents
 set autoindent                      "auto-indent for code blocks
 "DONT USE: smartindent              "it does stupid things with comments
 
-"smart indenting by filetype, better than smartindent and required for vundle
+"smart indenting by filetype, better than smartindent
 filetype on
 filetype indent on
 filetype plugin on
