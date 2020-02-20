@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install ctags grc coreutils tree macvim tmux reattach-to-user-namespace python git-extras npm
+brew install ctags grc coreutils tree macvim tmux reattach-to-user-namespace python git-extras npm neovim
 
 exit 0
