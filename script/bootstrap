@@ -164,9 +164,9 @@ then
 fi
 
 info "updating vim plugins"
-if vim +PlugInstall! +PlugClean! +qall > /tmp/vim-plug-update 2>&1
+if vim -c 'PlugInstall|PlugClean|qall' > /tmp/vim-plug-update 2>&1
 then
-  $HOME/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer
+  vim -c 'CocInstall -sync coc-tsserver coc-json coc-css coc-pyls coc-eslint coc-tslint coc-html|q'
   success "vim plugins updated"
 else
   fail "error updating vim plugins"
