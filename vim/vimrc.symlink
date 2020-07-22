@@ -103,6 +103,20 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/applescript.vim'
 
 " ==============================================================
+" === Wiki and Zettelkasten support ===
+" ==============================================================
+" VimWiki support
+Plug 'vimwiki/vimwiki'
+
+" VimZettel support
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+"Plug 'michal-h21/vim-zettel'
+Plug 'dpilone/vim-zettel'
+"Plug '~/Projects/vim-zettel'
+
+" ==============================================================
 " === Clojure support ===
 " ==============================================================
 " Clojure dynamic evaluation support
@@ -146,8 +160,8 @@ call plug#end()
 
 syntax on                           "lots of syntax highlighting
 set nocompatible                    "be iMproved
-"set background=dark                 "assume we're on a dark background for solarized colors
-"let g:solarized_termcolors=256      "assume we're on a dark background for colors
+set background=dark                 "assume we're on a dark background for solarized colors
+let g:solarized_termcolors=256      "assume we're on a dark background for colors
 
 " General Preferences
 set clipboard=unnamed               "use system clipboard by default
@@ -182,7 +196,8 @@ if has('gui_running')
   set t_Co=256                      "our terminal supports 256 colors
   set guioptions=egmrt              "hide the gui menubar
   "set noantialias                  "turn off antialiasing - it makes things look really blurry.
-  set guifont=Fira\ Mono\ Medium\ for\ Powerline:h12,Monaco:h12 "set fonts for gui vim
+"  set guifont=Fira\ Mono\ Medium\ for\ Powerline:h12,Monaco:h12 "set fonts for gui vim
+  set guifont=DejaVuSansMonoNerdFontCompleteM-Book:h12,Monaco:h12 "set fonts for gui vim
 endif
 
 " Neovim color support
@@ -256,8 +271,12 @@ set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " Necessary to show Unicode glyphs
 
 let g:airline_powerline_fonts = 1   " Use powerline fonts. I prefer 12pt Fira Mono Medium for Powerline
-let g:airline_theme='distinguished'
-colorscheme magellan
+"let g:airline_theme='distinguished'
+let g:airline_theme='badwolf'
+
+"colorscheme magellan
+"colorscheme solarized8_dark
+colorscheme PaperColor
 
 " Easytag configuration
 :set tags=./.tags;
@@ -331,6 +350,15 @@ map <leader>dw :set ft=dokuwiki<cr>
 
 " Shortcut for Gstatus
 map <leader>gs :Gstatus<cr>
+
+" Markdown autowrapping - wrap, but not hard lines so it doesn't mess up
+" other markdown editors.
+"autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+"autocmd BufRead,BufNewFile *.md setlocal wrap
+augroup Markdown
+  autocmd!
+  autocmd FileType markdown setlocal wrap linebreak spell
+augroup END
 
 " iTerm2 Touchbar support
 autocmd VimEnter * silent !echo -ne "\033]1337;PushKeyLabels\a"
@@ -481,9 +509,27 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " ==============================================
+" VimWiki Configuration
+
+let g:vimwiki_list = [{'path': "~/iCloud/Documents/Zettelkasten/",
+                      \ 'syntax': 'markdown', 'ext': '.md', 'auto_tags':1, 'auto_toc':1, 'links_space_char': '_'}]
+
+" My headers have a decent bit of metadata.  We need to look a little deeper for a title
+let g:vimwiki_max_scan_for_caption = 10
+
+" Our Zettel template
+let g:zettel_options = [{"front_matter" : {"tags" : ""}, "template": "~/iCloud/Documents/Zettelkasten/template.tpl"}]
+
+" No spaces in the title so the link text doesn't go sideways
+let g:zettel_format = "%Y%m%d-%H%M-%title"
+
+nmap <leader>wgl :VimwikiGenerateLinks<cr> :VimwikiRebuildTags<cr> :VimwikiGenerateTagLinks<cr>
+
+" ==============================================
 
 " Don't fold by default in vim-markdown
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_conceal=0
 
 " vim-javascript configuration
 let g:javascript_enable_domhtmlcss=1
