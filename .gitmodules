@@ -19,3 +19,6 @@
 [submodule "sessel"]
 	path = sessel
 	url = https://github.com/dpilone/sessel
+[submodule "ohmyzsh"]
+	path = ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git

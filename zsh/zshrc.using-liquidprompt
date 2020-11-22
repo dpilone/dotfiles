@@ -1,0 +1,101 @@
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# =======================================================
+# Use .localrc for SUPER SECRET STUFF that you don't
+# want in your public, versioned repo.
+# =======================================================
+if [[ -a ~/.localrc ]]
+then
+ source ~/.localrc
+fi
+
+# =======================================================
+# Load all of our .zsh files from our .dotfile topics.
+# =======================================================
+typeset -U config_files
+setopt extendedglob
+config_files=($HOME/.dotfiles/^(zprezto.symlink|oh-my-zsh|zsh-syntax-highlighting|opp)/**/*.zsh)
+
+# -------------------------------------------------------
+# Load the path files
+# -------------------------------------------------------
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# -------------------------------------------------------
+# Load everything but the path and completion files
+# -------------------------------------------------------
+#for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/liquidprompt.plugin.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -Uz compinit && compinit -i
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# =======================================================
+# Make everything use VI keys
+# =======================================================
+set -o vi
+export EDITOR=vim
+export VISUAL=vim
+
+# =======================================================
+# To have paths colored instead of underlined
+# =======================================================
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[path]='fg=white'
+
+# =======================================================
+# Load my custom prompt.
+# =======================================================
+source $ZSH/liquidprompt/liquidprompt
+
+# =======================================================
+# Load change inside / surround support
+# =======================================================
+source $ZSH/opp/opp.zsh
+source $ZSH/opp/opp/*.zsh
+
+# =======================================================
+# I use vim and don't want to have to remember where I am.
+# But reverse history search freaking rocks, put that back.
+# =======================================================
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey '^R' history-incremental-search-backward
+
+# =======================================================
+# Predictable SSH authentication socket location.
+# =======================================================
+SOCK="/tmp/ssh-agent-$USER-sock"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    rm -f /tmp/ssh-agent-$USER-screen
+    ln -sf $SSH_AUTH_SOCK $SOCK
+    export SSH_AUTH_SOCK=$SOCK
+fi
+
+# =======================================================
+# Load NVM
+# =======================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# And show the eyecandy
+neofetch
