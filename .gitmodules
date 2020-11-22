@@ -1,9 +1,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = https://github.com/altercation/solarized.git
-[submodule "liquidprompt"]
-	path = liquidprompt
-	url = https://github.com/dpilone/liquidprompt.git
 [submodule "opp"]
 	path = opp
 	url = https://github.com/hchbaw/opp.zsh.git
