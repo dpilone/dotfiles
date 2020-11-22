@@ -107,12 +107,17 @@ fi
 if [[ "$(uname -s)" == "Darwin" ]]
 then
 
-if (( $+commands[htop] )); then
-  alias top='sudo htop'
-fi
+  if (( $+commands[htop] )); then
+    alias top='sudo htop'
+  fi
 
   alias vim="mvim -v"
   alias ge='mvim --remote-tab-silent'
+
+  # Custom Apple Silicon aliases
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    alias ibrew='arch -x86_64 brew'
+  fi
 fi
 
 
