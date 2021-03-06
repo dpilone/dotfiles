@@ -98,3 +98,6 @@ export LANG=en_US.UTF-8
 #
 # Load aliases
 source $HOME/.dotfiles/system/aliases.zsh
+
+# Get fancy, if we have fancy support
+[[ -e `which neofetch` ]] && neofetch
