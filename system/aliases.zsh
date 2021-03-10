@@ -114,9 +114,9 @@ then
   alias vim="mvim -v"
   alias ge='mvim --remote-tab-silent'
 
-  # Custom Apple Silicon aliases
+  # Custom Apple Silicon aliases to support Rosetta2 brew
   if [[ "$(uname -m)" == "arm64" ]]; then
-    alias ibrew='arch -x86_64 brew'
+    alias ibrew='arch -x86_64 /usr/local/bin/brew'
   fi
 fi
 
