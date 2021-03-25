@@ -167,7 +167,7 @@ fi
 if [ "$(uname -s)" == "Linux" ]
 then
   info "checking and installing packages"
-  sudo apt install curl tmux nvim mosh zsh exuberant-ctags
+  sudo apt install curl tmux nvim mosh zsh exuberant-ctags python
   mkdir -p ~/bin
   ln -s ~/.dotfiles/sessel/tmux_sessel.py ~/bin
   success "packages installed"
