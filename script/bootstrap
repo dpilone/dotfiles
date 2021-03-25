@@ -163,14 +163,21 @@ then
   success "fonts installed"
 fi
 
-#info "updating vim plugins"
-#if vim -c 'PlugInstall|PlugClean|qall' > /tmp/vim-plug-update 2>&1
-#then
-#  vim -c 'CocInstall -sync coc-tsserver coc-json coc-css coc-pyls coc-eslint coc-tslint coc-html|q'
-#  success "vim plugins updated"
-#else
-#  fail "error updating vim plugins"
-#fi
+# If we are on Linux, install packages and bin symlinks
+if [ "$(uname -s)" == "Linux" ]
+then
+  info "checking and installing packages"
+  sudo apt install curl tmux nvim mosh zsh exuberant-ctags
+  mkdir -p ~/bin
+  ln -s ~/.dotfiles/sessel/tmux_sessel.py ~/bin
+  success "packages installed"
+
+  info "installing nvm and node LTS"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+  source ~/.nvm/nvm.sh
+  nvm install --lts
+  success "nvm and node installed"
+fi
 
 echo ''
 echo '  All installed!'
