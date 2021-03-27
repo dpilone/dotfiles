@@ -170,16 +170,21 @@ then
   grep -i -q ubuntu /etc/issue
   if [ $? -eq 0 ]; then
     info "checking and installing Ubuntu packages"
-    sudo apt install curl tmux neovim mosh zsh exuberant-ctags python
-    mkdir -p ~/bin
-    ln -s ~/.dotfiles/sessel/tmux_sessel.py ~/bin
+      sudo apt install -y curl tmux neovim mosh zsh exuberant-ctags python
+      mkdir -p ~/bin
+      ln -s ~/.dotfiles/sessel/tmux_sessel.py ~/bin
     success "packages installed"
 
     info "installing nvm and node LTS"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-    source ~/.nvm/nvm.sh
-    nvm install --lts
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+      source ~/.nvm/nvm.sh
+      nvm install --lts
     success "nvm and node installed"
+
+    info "setting zsh shell"
+      sudo apt install -y zsh 
+      sudo chsh -s /bin/zsh dpilone
+    success "set zsh shell"
   else
     info "*** Unknown linux distro - skipping linux packages"
   fi
